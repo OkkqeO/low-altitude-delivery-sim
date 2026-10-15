@@ -1,0 +1,3 @@
+# Python 3.10+ with tkinter. No third-party packages required.
+# Standard Windows Python installers include tkinter.
+# On Linux install the distribution's python3-tk package for the GUI.

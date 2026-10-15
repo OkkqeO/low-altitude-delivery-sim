@@ -1,0 +1,6 @@
+{
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "summary_sha256": "8fbbd3db56106c0a6f945e3ee17a3d2b6690134940654661f31832a933e70b52",
+  "error_bars": "sample standard deviation across evaluation seeds"
+}

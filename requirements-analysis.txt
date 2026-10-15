@@ -1,0 +1,2 @@
+# Optional, only for plot_study.py. Core simulator needs no third-party package.
+matplotlib>=3.8,<4

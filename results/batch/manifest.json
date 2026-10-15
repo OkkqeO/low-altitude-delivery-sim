@@ -1,0 +1,37 @@
+{
+  "design_seed": 20365744,
+  "evaluation_seeds": [
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019
+  ],
+  "scenarios": [
+    "normal",
+    "peak",
+    "closure"
+  ],
+  "base_config": {
+    "scenario": "normal",
+    "order_count": 30,
+    "altitude": 45,
+    "risk_weight": 2,
+    "seed": 20261015,
+    "drone_count": 5,
+    "speed": 9,
+    "takeoff_service": 25,
+    "landing_service": 20,
+    "delivery_service": 20,
+    "deadline": 600,
+    "deconflict": true,
+    "separation": 20,
+    "departure_step": 5,
+    "max_airspace_delay": 600
+  },
+  "scene_file": "C:\\Users\\20115\\Desktop\\操作系统原理\\低空配送仿真Python版\\data\\demo_scene.json",
+  "method": "每场景用基线调度的设计订单选址一次，所有评价种子与错峰开关复用相同场站；均值与样本标准差",
+  "dispatch_modes": [
+    "staggered"
+  ]
+}

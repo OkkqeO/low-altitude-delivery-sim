@@ -1,0 +1,38 @@
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.log
+
+# Local verification artifacts; selected screenshots live in docs/images
+.verification/
+
+# Keep published batch/safety evidence; ignore ad-hoc experiment outputs
+results/*
+!results/batch/
+!results/safety/
+
+# Packaging output
+build/
+dist/
+*.egg-info/
