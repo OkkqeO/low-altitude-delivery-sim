@@ -1,0 +1,67 @@
+[
+  {
+    "scene": 3,
+    "output_start_frame": 873,
+    "frames": 30,
+    "old_jump_pixels": 137.81838833045214,
+    "join_pixels": 0,
+    "arrival_frame": 28,
+    "max_step_pixels": 7.967503869764538,
+    "background_recovery": {
+      "clean_temporal_patches": 0,
+      "local_pointer_repair": 28
+    }
+  },
+  {
+    "scene": 4,
+    "output_start_frame": 1215,
+    "frames": 30,
+    "old_jump_pixels": 488.8495329871304,
+    "join_pixels": 0,
+    "arrival_frame": 28,
+    "max_step_pixels": 75.96594571415568,
+    "background_recovery": {
+      "clean_temporal_patches": 19,
+      "local_pointer_repair": 9
+    }
+  },
+  {
+    "scene": 8,
+    "output_start_frame": 2488,
+    "frames": 30,
+    "old_jump_pixels": 248.9948384542853,
+    "join_pixels": 0,
+    "arrival_frame": 28,
+    "max_step_pixels": 24.826716652225514,
+    "background_recovery": {
+      "clean_temporal_patches": 28,
+      "local_pointer_repair": 0
+    }
+  },
+  {
+    "scene": 9,
+    "output_start_frame": 2974,
+    "frames": 19,
+    "old_jump_pixels": 398.3618701020778,
+    "join_pixels": 0,
+    "arrival_frame": 17,
+    "max_step_pixels": 49.48855612464453,
+    "background_recovery": {
+      "clean_temporal_patches": 6,
+      "local_pointer_repair": 11
+    }
+  },
+  {
+    "scene": 14,
+    "output_start_frame": 5322,
+    "frames": 30,
+    "old_jump_pixels": 859.1054260430409,
+    "join_pixels": 0,
+    "arrival_frame": 28,
+    "max_step_pixels": 58.98077360321196,
+    "background_recovery": {
+      "clean_temporal_patches": 28,
+      "local_pointer_repair": 0
+    }
+  }
+]

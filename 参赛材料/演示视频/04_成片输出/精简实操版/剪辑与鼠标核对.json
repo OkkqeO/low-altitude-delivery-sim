@@ -1,0 +1,17 @@
+{
+  "source_video": "C:\\Users\\20115\\Desktop\\操作系统原理\\低空配送仿真Python版\\参赛材料\\演示视频\\04_成片输出\\实操演示版\\低空配送仿真_实操演示版_险情引导修订版.mp4",
+  "source_fps": 30,
+  "output_fps": 30,
+  "footage_speed": 1.0,
+  "pointer_smoothing_source": "approved cursor-smoothed edit",
+  "single_in_chapter_cut": {
+    "scene": 4,
+    "removed_source_seconds": [
+      5,
+      11
+    ],
+    "pointer_join_pixels": 0.21549695457862414
+  },
+  "comparison_scene_full_length": true,
+  "retained_comparison_frames": 519
+}

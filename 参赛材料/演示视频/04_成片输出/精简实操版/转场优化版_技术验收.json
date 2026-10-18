@@ -1,0 +1,26 @@
+{
+  "file": "C:\\Users\\20115\\Desktop\\操作系统原理\\低空配送仿真Python版\\参赛材料\\演示视频\\04_成片输出\\精简实操版\\低空配送仿真_精简实操版_转场优化版.mp4",
+  "sha256": "6774716c97ae4a570724a3d561ce93dbab746b514de2ab5d9c28d8947fdabb07",
+  "seconds": 216.233333,
+  "frames": 6487,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "size_MB": 31.511562,
+  "full_decode": "passed",
+  "chapters": 18,
+  "chapter_timing_unchanged": true,
+  "audio_packets_identical": true,
+  "subtitle_pixels_unchanged_before_encoding": true,
+  "subtitle_timing_unchanged": true,
+  "matched_camera_transitions": 8,
+  "short_dissolves": 8,
+  "source_sha256": "d06c11718905dcea30c4fbe8cf63e7dcf15a97c1f33da5af0e47998c457e2860",
+  "original_concise_preserved": true,
+  "full_delivery_preserved": true,
+  "simulation_data_unchanged": true,
+  "cursor_checks": 23,
+  "no_desktop_windows_opened": true
+}

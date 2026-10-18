@@ -13,6 +13,7 @@ import math
 from pathlib import Path
 from airspace import detect_conflicts, flight_segments, has_conflict
 from map_import import load_scene_file
+from map_geometry import FEATURE_TYPES, contains, validate_shape
 
 ROOT = Path(__file__).resolve().parent
 PLAN_NAMES = {"fixed": "固定布局", "distance": "距离优先", "combined": "综合风险"}
@@ -85,18 +86,25 @@ def create_scene(config: Config | None = None, scene_path: str | Path | dict | N
             raise ValueError(f"场景字段 {field} 无效")
     if min(scene["width"], scene["height"], scene["step"]) <= 0:
         raise ValueError("场景尺寸和网格间距须大于0")
+    if not isinstance(scene.get("image_import", {}), dict):
+        raise ValueError("图片导入信息格式无效")
+    if scene.get("image_import", {}).get("scale_confirmed") is False:
+        raise ValueError("图片地图尚未校准尺度，请在地图编辑器的“地图”页填写实际宽度或两点定标")
     if (scene["width"] / scene["step"] + 1) * (scene["height"] / scene["step"] + 1) > 200000:
         raise ValueError("网格过密，请增大step，控制在20万个节点以内")
-    for collection in ("pads", "deliveries", "buildings", "risk_zones"):
+    scene.setdefault("map_features", [])
+    for collection in ("pads", "deliveries", "buildings", "risk_zones", "map_features"):
         if not isinstance(scene.get(collection), list):
             raise ValueError(f"场景缺少列表 {collection}")
         ids = []
         for item in scene[collection]:
             if not isinstance(item, dict):
                 raise ValueError(f"{collection} 中的每条记录须为对象")
+            if collection == "buildings" and item.get("height_confirmed") is False:
+                raise ValueError(f"建筑{item.get('name', item.get('id', ''))}的楼高尚未填写，请在地图编辑器中手动输入")
             fields = {"pads": ("x", "y"), "deliveries": ("x", "y", "demand"),
                       "buildings": ("x", "y", "w", "h", "height"),
-                      "risk_zones": ("x", "y", "rx", "ry", "weight")}[collection]
+                      "risk_zones": ("x", "y", "rx", "ry", "weight"), "map_features": ("x", "y", "w", "h")}[collection]
             for field in fields:
                 value = item.get(field)
                 if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
@@ -115,16 +123,27 @@ def create_scene(config: Config | None = None, scene_path: str | Path | dict | N
                 raise ValueError("风险区半径须大于0，权重须非负")
             if collection == "buildings" and (min(item["w"], item["h"]) <= 0 or item["height"] < 0 or item["x"] + item["w"] > scene["width"] or item["y"] + item["h"] > scene["height"]):
                 raise ValueError("建筑尺寸、高度或边界无效")
+            if collection == "map_features" and (min(item["w"], item["h"]) <= 0
+                    or item["x"]+item["w"] > scene["width"]+1e-7 or item["y"]+item["h"] > scene["height"]+1e-7
+                    or item.get("kind") not in FEATURE_TYPES):
+                raise ValueError("地物区域的尺寸、类型或边界无效")
+            if collection in ("buildings", "map_features"):
+                validate_shape(item, scene["width"], scene["height"])
         if len(set(ids)) != len(ids):
             raise ValueError(f"{collection} 存在重复id")
     if len(scene["pads"]) < 2 or not scene["deliveries"]:
         raise ValueError("场景至少需要两个候选场站及一个配送点")
+    from facility_schema import validate_optional_facilities
+    validate_optional_facilities(scene)
     scene["altitude"] = c.altitude
     scene["closure"] = ({"x": scene["width"] * 470 / 960, "y": scene["height"] * 200 / 640,
                          "w": scene["width"] * 75 / 960, "h": scene["height"] * 150 / 640}
                         if c.scenario == "closure" else None)
     if not isinstance(scene.get("source"), str) or not scene["source"].strip():
         scene["source"] = "用户提供的场景；请补充数据来源"
+    if scene.get("map_presentation") == "schematic":
+        from flight_map import schematic_scene
+        scene = schematic_scene(scene)
     return scene
 
 
@@ -139,7 +158,7 @@ def is_blocked(scene: dict, point: Point) -> bool:
         return True
     if scene["closure"] and inside_rect(point, scene["closure"], scene["clearance"]):
         return True
-    return any(b["height"] + scene["vertical_clearance"] >= scene["altitude"] and inside_rect(point, b, scene["clearance"]) for b in scene["buildings"])
+    return any(b["height"] + scene["vertical_clearance"] >= scene["altitude"] and contains(b, point, scene["clearance"]) for b in scene["buildings"])
 
 
 def risk_at(scene: dict, point: Point) -> float:
@@ -318,14 +337,34 @@ def earliest_slot(calendar: list[dict], ready: float, duration: float) -> float:
 
 
 def simulate(scene: dict, config: Config, pad_ids: list[str], orders: list[dict],
-             routes: dict | None = None) -> dict:
+             routes: dict | None = None, fleet_allocation: dict | None = None,
+             pad_services: dict | None = None) -> dict:
     c = config.validated()
     known_pads = {p["id"] for p in scene["pads"]}
     if not pad_ids or len(set(pad_ids)) != len(pad_ids) or not set(pad_ids) <= known_pads:
         raise ValueError("起降场布局无效")
     routes = routes if routes is not None else route_catalog(scene, c)
     calendars = {pad: [] for pad in pad_ids}
-    drones = [{"id": f"U{i + 1}", "pad_id": pad_ids[i % len(pad_ids)], "available_at": 0.} for i in range(c.drone_count)]
+    if fleet_allocation is None:
+        assignments = [pad_ids[i % len(pad_ids)] for i in range(c.drone_count)]
+    else:
+        if (not isinstance(fleet_allocation, dict) or set(fleet_allocation) != set(pad_ids)
+                or any(isinstance(n, bool) or not isinstance(n, int) or n < 1 for n in fleet_allocation.values())
+                or sum(fleet_allocation.values()) != c.drone_count):
+            raise ValueError("机队配比须覆盖所选场站，每站至少1架且合计等于无人机总数")
+        assignments = [pad for i in range(max(fleet_allocation.values())) for pad in pad_ids if i < fleet_allocation[pad]]
+    services = {pad: {"takeoff_service": c.takeoff_service, "landing_service": c.landing_service} for pad in pad_ids}
+    if pad_services is not None:
+        if not isinstance(pad_services, dict) or set(pad_services) != set(pad_ids):
+            raise ValueError("场站服务参数须覆盖所选场站")
+        for pad, values in pad_services.items():
+            if not isinstance(values, dict) or set(values) != {"takeoff_service", "landing_service"}:
+                raise ValueError("场站服务须包含起飞和降落时间")
+            for field, value in values.items():
+                if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
+                    raise ValueError("场站起降服务时间须为正有限数值")
+            services[pad] = values
+    drones = [{"id": f"U{i + 1}", "pad_id": pad, "available_at": 0.} for i, pad in enumerate(assignments)]
     jobs, failed, events, accepted_air = [], [], [], []
     for order in sorted(orders, key=lambda o: (o["created_at"], o["id"])):
         best = None
@@ -338,23 +377,25 @@ def simulate(scene: dict, config: Config, pad_ids: list[str], orders: list[dict]
             has_route = True
             ready = max(order["created_at"], drone["available_at"])
             calendar = calendars[drone["pad_id"]]
-            baseline_prep = earliest_slot(calendar, ready, c.takeoff_service)
+            takeoff = services[drone["pad_id"]]["takeoff_service"]
+            landing = services[drone["pad_id"]]["landing_service"]
+            baseline_prep = earliest_slot(calendar, ready, takeoff)
             requested_prep, candidate = baseline_prep, None
             while requested_prep <= baseline_prep + c.max_airspace_delay + 1e-8:
-                prep = earliest_slot(calendar, requested_prep, c.takeoff_service)
+                prep = earliest_slot(calendar, requested_prep, takeoff)
                 if c.deconflict and prep - baseline_prep > c.max_airspace_delay + 1e-8:
                     break
-                depart = prep + c.takeoff_service
+                depart = prep + takeoff
                 arrived = depart + route["distance"] / c.speed
                 delivered = arrived + c.delivery_service
                 returned = delivered + route["distance"] / c.speed
-                land = earliest_slot(calendar, returned, c.landing_service)
+                land = earliest_slot(calendar, returned, landing)
                 trial = {"order_id": order["id"], "drone_id": drone["id"], "pad_id": drone["pad_id"],
                          "destination_id": order["destination_id"], "route_key": key,
                          "created_at": order["created_at"], "due_at": order["due_at"], "ready": ready,
                          "prep_start": prep, "depart": depart, "arrived_dest": arrived,
                          "delivered_at": delivered, "return_start": delivered, "return_arrival": returned,
-                         "land_start": land, "end": land + c.landing_service,
+                         "land_start": land, "end": land + landing,
                          "distance": route["distance"] * 2, "exposure": route["exposure"] * 2 / 100,
                          "pad_waiting": baseline_prep - ready + land - returned,
                          "airspace_delay": prep - baseline_prep}
@@ -373,7 +414,8 @@ def simulate(scene: dict, config: Config, pad_ids: list[str], orders: list[dict]
                            f"在{c.max_airspace_delay:g}秒最大额外等待内未找到无冲突出发时隙" if has_route else "所选场站到配送点无可通行航路"})
             events.append({"time": order["created_at"], "type": "failed", "order_id": order["id"]})
             continue
-        for start, duration, operation in ((best["prep_start"], c.takeoff_service, "takeoff"), (best["land_start"], c.landing_service, "landing")):
+        chosen_service = services[best["pad_id"]]
+        for start, duration, operation in ((best["prep_start"], chosen_service["takeoff_service"], "takeoff"), (best["land_start"], chosen_service["landing_service"], "landing")):
             calendars[best["pad_id"]].append({"start": start, "end": start + duration, "order_id": order["id"], "operation": operation})
         calendars[best["pad_id"]].sort(key=lambda entry: entry["start"])
         next(d for d in drones if d["id"] == best["drone_id"])["available_at"] = best["end"]
@@ -400,6 +442,14 @@ def simulate(scene: dict, config: Config, pad_ids: list[str], orders: list[dict]
              "on_time_rate": sum(j["delivered_at"] <= j["due_at"] + 1e-8 for j in jobs) / total if total else 0,
              "completion_rate": n / total if total else 0,
              "duration": max([1., *[j["end"] for j in jobs], *[o["created_at"] for o in failed]])}
+    delivery_times = sorted(j["delivered_at"] - j["created_at"] for j in jobs)
+    stats.update(
+        late_orders=sum(j["delivered_at"] > j["due_at"] + 1e-8 for j in jobs),
+        p95_delivery=delivery_times[math.ceil(.95*n)-1] if n else None,
+        mean_tardiness=sum(max(0., j["delivered_at"]-j["due_at"]) for j in jobs)/n if n else None,
+        mean_drone_wait=sum(j["ready"]-j["created_at"] for j in jobs)/n if n else None,
+        mean_takeoff_wait=sum(j["prep_start"]-j["ready"]-j["airspace_delay"] for j in jobs)/n if n else None,
+        mean_landing_wait=sum(j["land_start"]-j["return_arrival"] for j in jobs)/n if n else None)
     return {"pad_ids": list(pad_ids), "orders": orders, "jobs": jobs, "failed": failed, "conflicts": conflicts,
             "events": sorted(events, key=lambda e: (e["time"], e["order_id"])), "calendars": calendars,
             "drones": [{"id": d["id"], "pad_id": d["pad_id"]} for d in drones], "stats": stats}

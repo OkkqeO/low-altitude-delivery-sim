@@ -1,0 +1,7 @@
+﻿plan,plan_name,pad_id,level_id,level_name,drones,max_drones,takeoff_service,landing_service,total_cost,budget
+fixed,预算基线,S2,standard,标准站,3,3,25.0,20.0,200.0,260.0
+fixed,预算基线,S6,standard,标准站,2,3,25.0,20.0,200.0,260.0
+distance,配比优化,S2,standard,标准站,2,3,25.0,20.0,200.0,260.0
+distance,配比优化,S6,standard,标准站,3,3,25.0,20.0,200.0,260.0
+combined,分级联合优化,S6,standard,标准站,3,3,25.0,20.0,200.0,260.0
+combined,分级联合优化,S8,standard,标准站,2,3,25.0,20.0,200.0,260.0

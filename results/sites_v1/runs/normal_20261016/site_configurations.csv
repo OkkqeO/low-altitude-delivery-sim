@@ -1,0 +1,7 @@
+﻿plan,plan_name,pad_id,drones,total_drones
+fixed,固定位置,S1,3,5
+fixed,固定位置,S5,2,5
+distance,距离优先,S3,3,5
+distance,距离优先,S7,2,5
+combined,运行优选,S6,3,5
+combined,运行优选,S8,2,5

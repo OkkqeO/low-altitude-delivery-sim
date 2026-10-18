@@ -1,0 +1,23 @@
+{
+  "image": "data/真实校园地图/清华大学/清华大学_紫荆生活区_局部底图.png",
+  "basis": "人工参照官网底图的建筑名称、图例及实物区域标注；坐标为原始2400×2050局部图像素，不是米制坐标。抽样核验不能代表整图准确率。",
+  "landmarks": [
+    {"name": "紫荆14号楼填充区", "point": [725, 180], "kind": "building"},
+    {"name": "紫荆15号楼填充区", "point": [880, 180], "kind": "building"},
+    {"name": "节水科研教育基地", "point": [704, 240], "kind": "building"},
+    {"name": "紫荆10号楼", "point": [1050, 465], "kind": "building"},
+    {"name": "学生服务中心", "point": [700, 1040], "kind": "building"},
+    {"name": "气膜体育馆", "point": [1450, 240], "kind": "building"},
+    {"name": "北体育馆", "point": [1632, 1680], "kind": "building"},
+    {"name": "宿舍间道路", "point": [885, 600], "kind": "road"},
+    {"name": "水渠北段", "point": [370, 500], "kind": "water"},
+    {"name": "水渠中段", "point": [180, 900], "kind": "water"},
+    {"name": "紫荆雕塑园", "point": [1536, 1184], "kind": "green"},
+    {"name": "世纪林", "point": [1664, 1792], "kind": "green"},
+    {"name": "紫荆操场草坪", "point": [1024, 1008], "kind": "sports"},
+    {"name": "网球场", "point": [1344, 896], "kind": "sports"},
+    {"name": "宿舍间白色道路", "point": [900, 650], "kind": "road"},
+    {"name": "建筑外公共空地", "point": [768, 192], "kind": "paved"},
+    {"name": "校园范围外的白色纸面", "point": [2080, 320], "kind": "none"}
+  ]
+}

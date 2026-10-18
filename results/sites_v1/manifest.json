@@ -1,0 +1,42 @@
+{
+  "version": "0.7.0-sites",
+  "base_config": {
+    "scenario": "normal",
+    "order_count": 30,
+    "altitude": 45,
+    "risk_weight": 2,
+    "seed": 20261015,
+    "drone_count": 5,
+    "speed": 9,
+    "takeoff_service": 25,
+    "landing_service": 20,
+    "delivery_service": 20,
+    "deadline": 600,
+    "deconflict": true,
+    "separation": 20,
+    "departure_step": 5,
+    "max_airspace_delay": 600
+  },
+  "design_seeds": [
+    20365744,
+    20470473,
+    20575202
+  ],
+  "evaluation_seeds": [
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019
+  ],
+  "candidate_count": 28,
+  "station_count": 2,
+  "scene_sha256": "8803666555a096bb61a192f029c9a4ce2e92beb691f92a7a486898b22be5ec18",
+  "export_source_sha256": {
+    "site_selection.py": "95cfdf81b4bcebbdee6428d3d36128bdab9605821904f212cc55a0a34dd8055a",
+    "engine.py": "565121e6878cff34ca95f261aa3112b7a504229e35613299a43414ae30ab0ca6",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609",
+    "reporting.py": "2c06a7a99d504b9f7aa6124b8f7c4dac808f18d5874e4628a741a7a54493e9ad",
+    "facility.py": "f8473759f62aadf6e4ae9619681045da159be3676d5d7be46639d03ad1f4f34e"
+  }
+}

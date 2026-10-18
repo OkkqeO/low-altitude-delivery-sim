@@ -1,0 +1,4 @@
+﻿plan,plan_name,configuration
+fixed,固定位置,S1 3架 + S5 2架
+distance,距离优先,S3 3架 + S7 2架
+combined,运行优选,S6 3架 + S8 2架

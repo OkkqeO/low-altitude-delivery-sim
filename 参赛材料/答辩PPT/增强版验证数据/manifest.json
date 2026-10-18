@@ -1,0 +1,42 @@
+{
+  "source_sha256": {
+    "engine.py": "bcf5abc60042dadae2b00d134deed9d80ca43af40a049a6002127f3f64c04b35",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609",
+    "map_document.py": "502b5ac4922dd330a41510d0d9472af8b4fb1b9f0f853673e325a1bb19a0f9a6",
+    "image_map.py": "e62c914ec9373f5c9f2e643e0f368d2bd2ec8c5476d42d724fcc40a4119f08f8",
+    "reporting.py": "d1d28bf7bf028b2ea8a683305b687c1208914dc6a09964a7da5ec72077c174db",
+    "data/图片导入示例.png": "3f4d4ff9493e81c059da556e529838776099fb796b41736a200d8707ea4e4357"
+  },
+  "files_sha256": {
+    "case_after/comparison.csv": "76ccda8b68cd95fc21747324554242418fc3150533f81f1a3977f3727d105d0b",
+    "case_after/comparison.svg": "9ac7fc96ac3e1acb9937c3c33a62031169a04b4fbeec75947671829c6171ac39",
+    "case_after/conflicts.csv": "15d461ab8159ecc22fc0e998d6c79a37d413530ab10c070c009f73b150a64c91",
+    "case_after/failed.csv": "752791fb6a65f1ee0d6893e53008940e13ecdd61f5f112c8d7f11717a190c31d",
+    "case_after/jobs.csv": "05c85a9d94dda3d1359803b095a2eabbb7e349fdc995c458c817241beb8933df",
+    "case_after/map.svg": "ffca405c8b6f53d924bdb96be257c5384dbd4600423c44abbc65b951dd5c762f",
+    "case_after/result.json": "c897366e8b6201c62d218de6d6ce72bf5c54d711507223e4d762e80fd2276ab2",
+    "case_after_scene.json": "0222957e6366dcffbf2f217af9c437708a7c85b93c407917ab7f1d8a689184e0",
+    "case_before/comparison.csv": "2ccbd5abd10d95452fe5a5a89eb7fa9659069b2e1259f402b840bd2c1f0109e0",
+    "case_before/comparison.svg": "40bd2ddce97dd9fcd0e2bc7357b08a433848b9ef6636e2f447a8766885a629b5",
+    "case_before/conflicts.csv": "15d461ab8159ecc22fc0e998d6c79a37d413530ab10c070c009f73b150a64c91",
+    "case_before/failed.csv": "752791fb6a65f1ee0d6893e53008940e13ecdd61f5f112c8d7f11717a190c31d",
+    "case_before/jobs.csv": "d80c67645b374ec2a82c1ce4c04a90c7e9ccbf27534be4b3c4e772e8e02979f1",
+    "case_before/map.svg": "911a67ffcd9a97c4a15072332981fb36b7a4dc7fd1d09122639d55af5301e374",
+    "case_before/result.json": "7136585885712d3261ec8d18ff7ccb2bfee4af2d1ad07e6bbbea7c2194683aa8",
+    "case_before_scene.json": "68c52dd9a87535bba5d9bd9375bb64a8a5ac17e88ba5b7af18f12fc7379680d0",
+    "evidence_summary.json": "d0f0399f6c02fec4ac4304d330454af79d6f1cc983f4adc76fa9a99ce132e6ab",
+    "image_case/comparison.csv": "efc7677a0d94d484db7264bd64b471dc4ced9c3d6594251359a888bd310a6b51",
+    "image_case/comparison.svg": "e07486ee3ad3d1091213bc4ac88d2aa0c379041c6cdacd08c120408474f214ab",
+    "image_case/conflicts.csv": "15d461ab8159ecc22fc0e998d6c79a37d413530ab10c070c009f73b150a64c91",
+    "image_case/failed.csv": "752791fb6a65f1ee0d6893e53008940e13ecdd61f5f112c8d7f11717a190c31d",
+    "image_case/jobs.csv": "377fe9df8f4f227991ddcb9e72ab224009050ba92920855c4add3c19c4ce9b92",
+    "image_case/map.svg": "84313579139c613254a418323de66b048e3a76d1b6ae5be658bde08609f07de2",
+    "image_case/result.json": "220e1afc94c3ce59c8276a81b324b02a5c0b9440fa5240560a1234c8b39a20b9",
+    "image_case_playback.csv": "c564a9fe004e3e63b6a94fe27f23599756fd880e3c0e46e799d1e1d8bd43582f",
+    "image_case_scene.json": "813021fbe08948cf797931ed3a1da9f28d7e1828afae0d974242c677755c96f3",
+    "route_ablation_raw.csv": "17439dff39ef9bcf2ded214a2597c61251a778978b3c40be8af283c5bdbf0759",
+    "runtime_raw.csv": "1c79f3a9f3cfb82680903728859383da7d5ad5004cc7e5b3db6ef5bc0281796f",
+    "补充实验复现.py": "eda7cb09c3c2dd4bb1376ac0d59b4e69a49f198d7f5e8854c93f46cc0297423b",
+    "数据说明.md": "d5e68f1963098079e36394df619231d3b807f0c0e23583a55e4a89db25497a53"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "campus": "清华大学（北京）",
+  "study_area": "紫荆生活区及相邻服务、体育与教学区域",
+  "publisher": "清华大学官网",
+  "source_page": "https://www.tsinghua.edu.cn/zjqh/xyfg/xydt.htm",
+  "source_image": "https://www.tsinghua.edu.cn/__local/0/27/49/68F0AD650CD5D47156F6DA814E3_3C0DCEE3_2C3695.jpg",
+  "page_stated_update": "2025年12月",
+  "retrieved_date": "2026-10-17",
+  "retrieved_with": "Microsoft Edge via Playwright",
+  "original_file": "清华大学_校园地图_官网原图_2025年12月.jpg",
+  "original_pixels": [
+    5594,
+    7861
+  ],
+  "original_sha256": "206712c698628ce312be01b38a57c24a0c5681e9ed982753e97f26ae90b8322f",
+  "crop_file": "清华大学_紫荆生活区_局部底图.png",
+  "crop_box_pixels": [
+    2500,
+    1750,
+    4900,
+    3800
+  ],
+  "crop_box_convention": "left, top, right, bottom; original image pixels; right/bottom exclusive",
+  "crop_pixels": [
+    2400,
+    2050
+  ],
+  "crop_sha256": "857cc7e4e6842744bcb589aa7ce421c3e62f82ff1c2064923ffa9c6d99066cc0",
+  "modifications": "局部底图仅按记录的像素边界裁剪，未重绘或生成校园设施；预览图另做缩小压缩。",
+  "metric_scale_confirmed": false,
+  "building_heights_confirmed": false,
+  "crowd_data_confirmed": false,
+  "data_scope": "官方校园导览平面图，可用于地点核对和场景底图；尚未完成测绘精度核验、米制尺度定标或楼高核实。"
+}

@@ -1,0 +1,46 @@
+{
+  "version": "0.6.0-facility",
+  "budget": 260.0,
+  "design_seed": 20365744,
+  "design_seeds": [
+    20365744,
+    20470473,
+    20575202
+  ],
+  "evaluation_seeds": [
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019
+  ],
+  "base_config": {
+    "scenario": "normal",
+    "order_count": 30,
+    "altitude": 45,
+    "risk_weight": 2,
+    "seed": 20261015,
+    "drone_count": 5,
+    "speed": 9,
+    "takeoff_service": 25,
+    "landing_service": 20,
+    "delivery_service": 20,
+    "deadline": 600,
+    "deconflict": true,
+    "separation": 20,
+    "departure_step": 5,
+    "max_airspace_delay": 600
+  },
+  "candidate_count": 224,
+  "design_seconds": 56.55230900000606,
+  "export_source_sha256": {
+    "engine.py": "565121e6878cff34ca95f261aa3112b7a504229e35613299a43414ae30ab0ca6",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609",
+    "facility.py": "f8473759f62aadf6e4ae9619681045da159be3676d5d7be46639d03ad1f4f34e",
+    "facility_schema.py": "550f1ee792203f9d004cc8a53a327d2f05821880b06189425113fcf264ede137",
+    "map_geometry.py": "e7a906f528dad2a949e3dc7e647f9411c7047d25ff582ab7b7b17d90d81f143c",
+    "flight_map.py": "f308bce29acb1be8501d7712a5b48f3de9d4b42fed6d1ab2658902387d8d4cc5",
+    "reporting.py": "ac3a127b6ff79a7199dae794206d662c2cd2f9c8976ed8fa8c70aaf5962f3792"
+  },
+  "scene_sha256": "f3c004b1f3af1bf74c1c0fc0b2100f55412758f95e025b9c29b86d0c4b66ee46"
+}

@@ -1,0 +1,442 @@
+{
+  "transitions": [
+    {
+      "start": 720,
+      "end": 755,
+      "start_time": 24.0,
+      "end_time": 25.166666666666668,
+      "distance": 1200.201649723912,
+      "start_xy": [
+        255.0,
+        107.0
+      ],
+      "target_xy": [
+        1455.0,
+        129.0
+      ],
+      "click": true
+    },
+    {
+      "start": 789,
+      "end": 802,
+      "start_time": 26.3,
+      "end_time": 26.733333333333334,
+      "distance": 138.88484438555562,
+      "start_xy": [
+        1455.0,
+        129.0
+      ],
+      "target_xy": [
+        1495.0,
+        262.0
+      ],
+      "click": true
+    },
+    {
+      "start": 953,
+      "end": 967,
+      "start_time": 31.766666666666666,
+      "end_time": 32.233333333333334,
+      "distance": 167.19150696132863,
+      "start_xy": [
+        1637.0,
+        132.0
+      ],
+      "target_xy": [
+        1645.0,
+        299.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1027,
+      "end": 1040,
+      "start_time": 34.233333333333334,
+      "end_time": 34.666666666666664,
+      "distance": 125.0,
+      "start_xy": [
+        1645.0,
+        299.0
+      ],
+      "target_xy": [
+        1645.0,
+        424.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1270,
+      "end": 1284,
+      "start_time": 42.333333333333336,
+      "end_time": 42.8,
+      "distance": 233.33452380648689,
+      "start_xy": [
+        1645.0,
+        424.0
+      ],
+      "target_xy": [
+        1552.0,
+        638.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1311,
+      "end": 1326,
+      "start_time": 43.7,
+      "end_time": 44.2,
+      "distance": 201.0,
+      "start_xy": [
+        1552.0,
+        638.0
+      ],
+      "target_xy": [
+        1753.0,
+        638.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1346,
+      "end": 1383,
+      "start_time": 44.86666666666667,
+      "end_time": 46.1,
+      "distance": 1303.9727757894334,
+      "start_xy": [
+        1753.0,
+        638.0
+      ],
+      "target_xy": [
+        492.0,
+        306.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1405,
+      "end": 1440,
+      "start_time": 46.833333333333336,
+      "end_time": 48.0,
+      "distance": 1189.155162289598,
+      "start_xy": [
+        492.0,
+        306.0
+      ],
+      "target_xy": [
+        1645.0,
+        597.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1463,
+      "end": 1475,
+      "start_time": 48.766666666666666,
+      "end_time": 49.166666666666664,
+      "distance": 67.0,
+      "start_xy": [
+        1645.0,
+        597.0
+      ],
+      "target_xy": [
+        1645.0,
+        664.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1696,
+      "end": 1734,
+      "start_time": 56.53333333333333,
+      "end_time": 57.8,
+      "distance": 1325.4602974061502,
+      "start_xy": [
+        1500.0,
+        621.0
+      ],
+      "target_xy": [
+        249.0,
+        183.0
+      ],
+      "click": true
+    },
+    {
+      "start": 1871,
+      "end": 1883,
+      "start_time": 62.36666666666667,
+      "end_time": 62.766666666666666,
+      "distance": 0.0,
+      "start_xy": [
+        305.0,
+        215.0
+      ],
+      "target_xy": [
+        305.0,
+        215.0
+      ],
+      "click": true
+    },
+    {
+      "start": 2057,
+      "end": 2093,
+      "start_time": 68.56666666666666,
+      "end_time": 69.76666666666667,
+      "distance": 1249.3534327803322,
+      "start_xy": [
+        305.0,
+        215.0
+      ],
+      "target_xy": [
+        1333.0,
+        925.0
+      ],
+      "click": true
+    },
+    {
+      "start": 2209,
+      "end": 2225,
+      "start_time": 73.63333333333334,
+      "end_time": 74.16666666666667,
+      "distance": 246.0,
+      "start_xy": [
+        1348.0,
+        925.0
+      ],
+      "target_xy": [
+        1594.0,
+        925.0
+      ],
+      "click": true
+    },
+    {
+      "start": 2712,
+      "end": 2753,
+      "start_time": 90.4,
+      "end_time": 91.76666666666667,
+      "distance": 1484.4800436516484,
+      "start_xy": [
+        147.0,
+        760.0
+      ],
+      "target_xy": [
+        1572.0,
+        344.0
+      ],
+      "click": true
+    },
+    {
+      "start": 2844,
+      "end": 2880,
+      "start_time": 94.8,
+      "end_time": 96.0,
+      "distance": 1214.2001482457495,
+      "start_xy": [
+        1572.0,
+        344.0
+      ],
+      "target_xy": [
+        401.0,
+        665.0
+      ],
+      "click": true
+    },
+    {
+      "start": 3256,
+      "end": 3269,
+      "start_time": 108.53333333333333,
+      "end_time": 108.96666666666667,
+      "distance": 102.9866496202299,
+      "start_xy": [
+        283.0,
+        691.5
+      ],
+      "target_xy": [
+        195.0,
+        638.0
+      ],
+      "click": true
+    },
+    {
+      "start": 3316,
+      "end": 3328,
+      "start_time": 110.53333333333333,
+      "end_time": 110.93333333333334,
+      "distance": 0.0,
+      "start_xy": [
+        195.0,
+        638.0
+      ],
+      "target_xy": [
+        195.0,
+        638.0
+      ],
+      "click": true
+    },
+    {
+      "start": 3459,
+      "end": 3479,
+      "start_time": 115.3,
+      "end_time": 115.96666666666667,
+      "distance": 392.10330271498606,
+      "start_xy": [
+        231.0,
+        922.0
+      ],
+      "target_xy": [
+        614.0,
+        838.0
+      ],
+      "click": true
+    },
+    {
+      "start": 4394,
+      "end": 4420,
+      "start_time": 146.46666666666667,
+      "end_time": 147.33333333333334,
+      "distance": 760.9388937358899,
+      "start_xy": [
+        913.0,
+        890.0
+      ],
+      "target_xy": [
+        195.0,
+        638.0
+      ],
+      "click": true
+    },
+    {
+      "start": 4469,
+      "end": 4481,
+      "start_time": 148.96666666666667,
+      "end_time": 149.36666666666667,
+      "distance": 0.0,
+      "start_xy": [
+        195.0,
+        638.0
+      ],
+      "target_xy": [
+        195.0,
+        638.0
+      ],
+      "click": true
+    },
+    {
+      "start": 6069,
+      "end": 6090,
+      "start_time": 202.3,
+      "end_time": 203.0,
+      "distance": 525.0342845948253,
+      "start_xy": [
+        404.0,
+        828.0
+      ],
+      "target_xy": [
+        698.0,
+        393.0
+      ],
+      "click": true
+    },
+    {
+      "start": 6376,
+      "end": 6389,
+      "start_time": 212.53333333333333,
+      "end_time": 212.96666666666667,
+      "distance": 57.107355042936454,
+      "start_xy": [
+        661.0,
+        436.5
+      ],
+      "target_xy": [
+        698.0,
+        393.0
+      ],
+      "click": true
+    },
+    {
+      "start": 7180,
+      "end": 7201,
+      "start_time": 239.33333333333334,
+      "end_time": 240.03333333333333,
+      "distance": 522.1197180723976,
+      "start_xy": [
+        1102.0,
+        443.0
+      ],
+      "target_xy": [
+        605.0,
+        283.0
+      ],
+      "click": true
+    },
+    {
+      "start": 7259,
+      "end": 7282,
+      "start_time": 241.96666666666667,
+      "end_time": 242.73333333333332,
+      "distance": 630.7654080559586,
+      "start_xy": [
+        584.0,
+        294.0
+      ],
+      "target_xy": [
+        1212.0,
+        235.0
+      ],
+      "click": true
+    },
+    {
+      "start": 8211,
+      "end": 8233,
+      "start_time": 273.7,
+      "end_time": 274.43333333333334,
+      "distance": 576.0703082089893,
+      "start_xy": [
+        1118.0,
+        559.0
+      ],
+      "target_xy": [
+        614.0,
+        838.0
+      ],
+      "click": true
+    }
+  ],
+  "click_frames": [
+    755,
+    802,
+    967,
+    1040,
+    1284,
+    1326,
+    1383,
+    1440,
+    1475,
+    1734,
+    1884,
+    2093,
+    2225,
+    2405,
+    2753,
+    2880,
+    3269,
+    3329,
+    3479,
+    4420,
+    4482,
+    6090,
+    6389,
+    6613,
+    6672,
+    6731,
+    6790,
+    6850,
+    7201,
+    7282,
+    8233
+  ],
+  "source_frames": 8906,
+  "max_step_pixels": 93.0,
+  "trajectory": "minimum-jerk easing arriving at the original click frame",
+  "background": "existing captured application frames",
+  "render_fps": 30
+}

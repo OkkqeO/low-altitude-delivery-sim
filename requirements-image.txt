@@ -1,0 +1,4 @@
+# Optional image import and image-backed map editing. Core simulator remains standard-library only.
+Pillow>=10,<13
+numpy>=1.26,<3
+opencv-python-headless>=4.10,<6

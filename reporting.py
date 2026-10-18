@@ -8,6 +8,8 @@ from pathlib import Path
 import statistics
 
 from engine import PLAN_NAMES, risk_at
+from map_geometry import svg_path
+from flight_map import flight_obstacles
 
 COLORS = {"fixed": "#8392a9", "distance": "#3869e8", "combined": "#079d8a"}
 SCENARIOS = {"normal": "正常配送", "peak": "高峰订单", "closure": "局部空域关闭"}
@@ -54,18 +56,31 @@ def map_svg(result: dict, plan_key="combined") -> str:
     width, height = scene["width"], scene["height"]
     scale = min(1056 / width, 704 / height)
     map_w, map_h = width * scale, height * scale
-    body = [text(40, 38, f"{PLAN_NAMES[plan_key]} · {SCENARIOS[result['config']['scenario']]}", 23),
-            text(40, 66, "模拟园区 / 固定高度风险航路 / 坐标单位：米"),
+    schematic = scene.get("map_presentation") == "schematic"
+    body = [text(40, 38, f"{plan['name']} · {SCENARIOS[result['config']['scenario']]}", 23),
+            text(40, 66, "园区场景 / 固定高度风险航路 / 坐标单位：米"),
             '<g transform="translate(40 90)">']
-    for y in range(0, int(height) + 1, 16):
+    background = None if schematic else scene.get("image_background", {}).get("png_base64")
+    if background:
+        body.append(f'<image width="{map_w}" height="{map_h}" href="data:image/png;base64,{background}"/>')
+    for y in range(0, 0 if schematic else int(height) + 1, 16):
         for x in range(0, int(width) + 1, 16):
             r = risk_at(scene, (x + 8, y + 8))
             color = f"#{round(240 + 12 * r):02x}{round(247 - 105 * r):02x}{round(245 - 100 * r):02x}"
-            body.append(f'<rect x="{x * scale:.2f}" y="{y * scale:.2f}" width="{min(16, width-x)*scale:.2f}" height="{min(16, height-y)*scale:.2f}" fill="{color}"/>')
-    for b in scene["buildings"]:
+            body.append(f'<rect x="{x * scale:.2f}" y="{y * scale:.2f}" width="{min(16, width-x)*scale:.2f}" height="{min(16, height-y)*scale:.2f}" fill="{color}" fill-opacity="{.25 if background else 1}"/>')
+    for feature in scene.get("map_features", []):
+        if feature["kind"] != "road":
+            continue
+        path = svg_path(feature, scale) if feature.get("polygon") else f'M{feature["x"]*scale},{feature["y"]*scale} h{feature["w"]*scale} v{feature["h"]*scale} h{-feature["w"]*scale} Z'
+        body.append(f'<path d="{path}" fill="#e6ebf1" fill-rule="evenodd" stroke="#adbaca" stroke-width=".7"/>')
+    for b in flight_obstacles(scene):
         blocked = b["height"] + scene["vertical_clearance"] >= scene["altitude"]
-        body.append(f'<rect x="{b["x"]*scale}" y="{b["y"]*scale}" width="{b["w"]*scale}" height="{b["h"]*scale}" rx="5" fill="{"#c1cbd9" if blocked else "#e2e8ef"}" stroke="#8392a9"/>')
-        body.append(text((b["x"]+b["w"]/2)*scale, (b["y"]+b["h"]/2)*scale, f'{b["name"]} {b["height"]}m', 11, anchor="middle"))
+        if b.get("polygon"):
+            body.append(f'<path d="{svg_path(b, scale)}" fill="{"#c1cbd9" if blocked else "#e2e8ef"}" fill-opacity=".5" fill-rule="evenodd" stroke="#8392a9"/>')
+        else:
+            body.append(f'<rect x="{b["x"]*scale}" y="{b["y"]*scale}" width="{b["w"]*scale}" height="{b["h"]*scale}" rx="5" fill="{"#c1cbd9" if blocked else "#e2e8ef"}" stroke="#8392a9"/>')
+        if not schematic:
+            body.append(text((b["x"]+b["w"]/2)*scale, (b["y"]+b["h"]/2)*scale, f'{b["name"]} {b["height"]}m', 11, anchor="middle"))
     if scene["closure"]:
         b = scene["closure"]
         body.append(f'<rect x="{b["x"]*scale}" y="{b["y"]*scale}" width="{b["w"]*scale}" height="{b["h"]*scale}" fill="#ffd5d5" fill-opacity=".7" stroke="#c34545" stroke-dasharray="7 4"/>')
@@ -84,7 +99,8 @@ def map_svg(result: dict, plan_key="combined") -> str:
         selected = p["id"] in plan["pad_ids"]
         body.append(f'<circle cx="{p["x"]*scale}" cy="{p["y"]*scale}" r="{9 if selected else 5}" fill="{COLORS[plan_key] if selected else "#ffffff"}" stroke="#3869e8" stroke-width="2"/>')
         body.append(text(p["x"]*scale+12, p["y"]*scale+5, p["id"], 12))
-    body += ['</g>', text(40, map_h+120, f'选中场站：{" + ".join(plan["pad_ids"])}；巡航高度：{scene["altitude"]}m；橙色深浅表示模拟人员暴露。'),
+    note = "仅显示飞行障碍与道路。" if schematic else "橙色深浅表示模拟人员暴露。"
+    body += ['</g>', text(40, map_h+120, f'选中场站：{" + ".join(plan["pad_ids"])}；巡航高度：{scene["altitude"]}m；{note}'),
              text(40, map_h+146, f"人员暴露为代理指标；同高度间距检测阈值 {result['config'].get('separation',20)}m，完整冲突记录见conflicts.csv。", 12, "#687790")]
     return svg_document(round(map_w+80), round(map_h+165), body)
 
@@ -100,7 +116,7 @@ def comparison_svg(result: dict) -> str:
         maximum = max([value for _,value in values if value is not None]+[1e-6]) * 1.18
         for i,(key,value) in enumerate(values):
             y = 164 + i*77
-            body.append(text(x, y, PLAN_NAMES[key], 13))
+            body.append(text(x, y, result["plans"][key]["name"], 13))
             if value is not None:
                 body.append(f'<rect x="{x}" y="{y+12}" width="{max(1,value/maximum*270):.2f}" height="22" rx="5" fill="{COLORS[key]}"/>')
             body.append(text(x+310, y+29, "不可达" if value is None else f"{value:.3f}", 13, anchor="end"))
@@ -158,6 +174,25 @@ def export_result(result: dict, output: str | Path) -> Path:
     output.mkdir(parents=True, exist_ok=True)
     write_json(output / "result.json", result)
     write_csv(output / "comparison.csv", comparison_rows(result))
+    if "site_design" in result:
+        write_csv(output/"site_configurations.csv", [
+            {"plan": key, "plan_name": plan["name"], "pad_id": p, "drones": n,
+             "total_drones": result["config"]["drone_count"]}
+            for key, plan in result["plans"].items()
+            for p, n in plan["site_configuration"]["fleet_allocation"].items()])
+    if "facility_design" in result:
+        facility_rows = []
+        levels = {v["id"]: v for v in result["facility_design"]["levels"]}
+        for key, plan in result["plans"].items():
+            configuration = plan["facility_configuration"]
+            for pad in plan["pad_ids"]:
+                level = levels[configuration["levels"][pad]]
+                facility_rows.append({"plan": key, "plan_name": plan["name"], "pad_id": pad,
+                                      "level_id": level["id"], "level_name": level["name"],
+                                      "drones": configuration["fleet_allocation"][pad],
+                                      "max_drones": level["max_drones"], **configuration["pad_services"][pad],
+                                      "total_cost": configuration["cost"], "budget": result["facility_design"]["budget"]})
+        write_csv(output/"facility_configurations.csv", facility_rows)
     jobs = [{"plan": key, **job} for key,p in result["plans"].items() for job in p["jobs"]]
     if jobs:
         write_csv(output / "jobs.csv", jobs)

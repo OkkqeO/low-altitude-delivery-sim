@@ -1,0 +1,251 @@
+{
+  "runtime": [
+    {
+      "orders": 30,
+      "design_s": 3.2812510000003385,
+      "evaluation_s": 0.12338920000183862,
+      "total_s": 3.4119005000029574,
+      "min_s": 3.3748084000035306,
+      "max_s": 3.4413024000023142
+    },
+    {
+      "orders": 60,
+      "design_s": 3.7092604999998002,
+      "evaluation_s": 0.39360339999984717,
+      "total_s": 4.091101300000446,
+      "min_s": 4.090749099996174,
+      "max_s": 4.178184600001259
+    },
+    {
+      "orders": 120,
+      "design_s": 4.4125806000010925,
+      "evaluation_s": 0.7742804000008618,
+      "total_s": 5.172760299996298,
+      "min_s": 4.402279599999019,
+      "max_s": 5.232099200002267
+    }
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "method": "one unrecorded warmup; 3 sequential repeats per load; perf_counter; no UI/import/export/plotting",
+    "load_window_s": 1200,
+    "scenario": "normal",
+    "note": "30/60/120 orders all in normal scenario; not the previous peak scenario"
+  },
+  "case": {
+    "building": "B1",
+    "height_before": 32,
+    "height_after": 52,
+    "route_key": "S1:D9",
+    "route_before_m": 504.0142853498729,
+    "route_after_m": 518.8772003600253,
+    "changed_route_count": 9,
+    "before_pads": [
+      "S2",
+      "S6"
+    ],
+    "after_pads": [
+      "S2",
+      "S6"
+    ],
+    "before_stats": {
+      "total_orders": 30,
+      "delivered_orders": 30,
+      "failed_orders": 0,
+      "total_distance": 18758.69948707926,
+      "total_exposure": 18.0886722069055,
+      "mean_exposure": 0.6029557402301833,
+      "mean_delivery": 110.06199301143424,
+      "mean_pad_waiting": 16.4162421467671,
+      "mean_airspace_delay": 1.5,
+      "air_conflict_count": 0,
+      "air_conflict_pair_count": 0,
+      "air_conflict_duration": 0,
+      "airspace_failed_orders": 0,
+      "unreachable_orders": 0,
+      "on_time_rate": 1.0,
+      "completion_rate": 1.0,
+      "duration": 1251.6159755524645
+    },
+    "after_stats": {
+      "total_orders": 30,
+      "delivered_orders": 30,
+      "failed_orders": 0,
+      "total_distance": 18758.69948707926,
+      "total_exposure": 18.0886722069055,
+      "mean_exposure": 0.6029557402301833,
+      "mean_delivery": 110.06199301143424,
+      "mean_pad_waiting": 16.4162421467671,
+      "mean_airspace_delay": 1.5,
+      "air_conflict_count": 0,
+      "air_conflict_pair_count": 0,
+      "air_conflict_duration": 0,
+      "airspace_failed_orders": 0,
+      "unreachable_orders": 0,
+      "on_time_rate": 1.0,
+      "completion_rate": 1.0,
+      "duration": 1251.6159755524645
+    },
+    "case_type": "API-driven component edit/save/reopen/recompute; simulated map; not GUI recording",
+    "job": {
+      "order_id": "O008",
+      "drone_id": "U1",
+      "pad_id": "S1",
+      "destination_id": "D9",
+      "route_key": "S1:D9",
+      "created_at": 26,
+      "due_at": 626,
+      "ready": 26,
+      "prep_start": 26,
+      "depart": 51,
+      "arrived_dest": 108.65302226222504,
+      "delivered_at": 128.65302226222502,
+      "return_start": 128.65302226222502,
+      "return_arrival": 186.30604452445004,
+      "land_start": 186.30604452445004,
+      "end": 206.30604452445004,
+      "distance": 1037.7544007200506,
+      "exposure": 1.245448622363923,
+      "pad_waiting": 0.0,
+      "airspace_delay": 0
+    },
+    "job_before": {
+      "order_id": "O008",
+      "drone_id": "U1",
+      "pad_id": "S1",
+      "destination_id": "D9",
+      "route_key": "S1:D9",
+      "created_at": 26,
+      "due_at": 626,
+      "ready": 26,
+      "prep_start": 26,
+      "depart": 51,
+      "arrived_dest": 107.001587261097,
+      "delivered_at": 127.001587261097,
+      "return_start": 127.001587261097,
+      "return_arrival": 183.003174522194,
+      "land_start": 183.003174522194,
+      "end": 203.003174522194,
+      "distance": 1008.0285706997458,
+      "exposure": 1.240066508391365,
+      "pad_waiting": 0.0,
+      "airspace_delay": 0
+    },
+    "trace_plan": "fixed"
+  },
+  "ablation": {
+    "route_pairs": 80,
+    "unreachable_lambda0": 0,
+    "unreachable_lambda2": 0,
+    "mean_distance0": 453.8443938888816,
+    "mean_distance2": 475.742460290506,
+    "mean_exposure0": 94.48369446045822,
+    "mean_exposure2": 59.97197895077275
+  },
+  "image_import": {
+    "candidate_buildings": 10,
+    "scale_confirmed": false,
+    "all_heights_pending": true
+  },
+  "exceptions": [
+    {
+      "case": "尺度未确认",
+      "result": "blocked",
+      "message": "图片地图尚未校准尺度，请在地图编辑器的“地图”页填写实际宽度或两点定标"
+    },
+    {
+      "case": "楼高未确认",
+      "result": "blocked",
+      "message": "建筑图书馆的楼高尚未填写，请在地图编辑器中手动输入"
+    },
+    {
+      "case": "坐标越界",
+      "result": "blocked",
+      "message": "pads 的坐标超出场景范围"
+    },
+    {
+      "case": "所有指定航路不可达",
+      "result": "unreachable",
+      "message": "所选场站到配送点无可通行航路",
+      "stats": {
+        "total_orders": 1,
+        "delivered_orders": 0,
+        "failed_orders": 1,
+        "total_distance": 0,
+        "total_exposure": 0,
+        "mean_exposure": null,
+        "mean_delivery": null,
+        "mean_pad_waiting": null,
+        "mean_airspace_delay": null,
+        "air_conflict_count": 0,
+        "air_conflict_pair_count": 0,
+        "air_conflict_duration": 0,
+        "airspace_failed_orders": 0,
+        "unreachable_orders": 1,
+        "on_time_rate": 0.0,
+        "completion_rate": 0.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "case": "零额外等待的对向航路",
+      "result": "airspace_delay_limit",
+      "message": "在0秒最大额外等待内未找到无冲突出发时隙",
+      "stats": {
+        "total_orders": 2,
+        "delivered_orders": 1,
+        "failed_orders": 1,
+        "total_distance": 200.0,
+        "total_exposure": 0.07,
+        "mean_exposure": 0.07,
+        "mean_delivery": 55.0,
+        "mean_pad_waiting": 0.0,
+        "mean_airspace_delay": 0.0,
+        "air_conflict_count": 0,
+        "air_conflict_pair_count": 0,
+        "air_conflict_duration": 0,
+        "airspace_failed_orders": 1,
+        "unreachable_orders": 0,
+        "on_time_rate": 0.5,
+        "completion_rate": 0.5,
+        "duration": 85.0
+      }
+    }
+  ],
+  "image_case": {
+    "source_image": "data/图片导入示例.png",
+    "width_m": 960,
+    "buildings": 10,
+    "candidate_pads": 6,
+    "destinations": 8,
+    "candidate_combinations": 15,
+    "pad_ids": [
+      "S5",
+      "S6"
+    ],
+    "stats": {
+      "total_orders": 30,
+      "delivered_orders": 30,
+      "failed_orders": 0,
+      "total_distance": 22723.379385628206,
+      "total_exposure": 7.953182784969872,
+      "mean_exposure": 0.26510609283232905,
+      "mean_delivery": 124.2683368448601,
+      "mean_pad_waiting": 8.990561179787996,
+      "mean_airspace_delay": 5.2540022732034535,
+      "air_conflict_count": 0,
+      "air_conflict_pair_count": 0,
+      "air_conflict_duration": 0,
+      "airspace_failed_orders": 0,
+      "unreachable_orders": 0,
+      "on_time_rate": 1.0,
+      "completion_rate": 1.0,
+      "duration": 1369.8677302352553
+    },
+    "recorded_gui_case_matches_recomputed_jobs_and_stats": true,
+    "playback_samples": 20,
+    "scope": "Same synthetic image, explicit example heights, same saved component geometry. Video records GUI import/edit/calculate/playback; export verified through reporting.export_result."
+  }
+}

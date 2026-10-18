@@ -1,0 +1,4 @@
+﻿plan,plan_name,configuration,cost,budget
+fixed,预算基线,S2 标准站 3架 + S6 标准站 2架,200.0,260.0
+distance,配比优化,S2 标准站 2架 + S6 标准站 3架,200.0,260.0
+combined,分级联合优化,S6 标准站 3架 + S8 标准站 2架,200.0,260.0

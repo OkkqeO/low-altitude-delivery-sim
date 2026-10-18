@@ -1,0 +1,4 @@
+﻿scenario,evaluation_seed,design_seed,plan,plan_name,dispatch,pads,total_orders,delivered_orders,failed_orders,total_distance,total_exposure,mean_exposure,mean_delivery,mean_pad_waiting,mean_airspace_delay,air_conflict_count,air_conflict_pair_count,air_conflict_duration,airspace_failed_orders,unreachable_orders,on_time_rate,completion_rate,duration
+normal,20261015,20365744,fixed,固定布局,staggered,S1+S5,30,30,0,32148.10864637215,31.60439228923351,1.0534797429744502,189.8801324565562,23.96187387737788,6.843534817481668,0,0,0,0,0,1.0,1.0,1514.58753679457
+normal,20261015,20365744,distance,距离优先,staggered,S3+S7,30,30,0,20122.94411604079,34.127207105010285,1.1375735701670096,129.49656930807154,16.984287013289343,4.913081799278436,0,0,0,0,0,1.0,1.0,1252.2244386616712
+normal,20261015,20365744,combined,综合风险,staggered,S2+S6,30,30,0,18758.69948707926,18.0886722069055,0.6029557402301833,110.06199301143424,16.4162421467671,1.5,0,0,0,0,0,1.0,1.0,1251.6159755524645

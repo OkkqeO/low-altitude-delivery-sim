@@ -9,7 +9,9 @@ from reporting import batch_svg, comparison_rows, export_result, summary_rows, w
 
 def main():
     parser = argparse.ArgumentParser(description="低空配送风险仿真与起降场选址（Python版）")
-    parser.add_argument("--mode", choices=("gui", "single", "batch", "safety"), default="gui")
+    parser.add_argument("--mode", choices=("gui", "single", "batch", "safety", "sites", "facility"), default="gui")
+    parser.add_argument("--budget", type=float, help="分级选址预算（相对单位），默认读取地图或260")
+    parser.add_argument("--design-seed-count", type=int, default=3, help="选址设计种子数量，1至5，默认3")
     parser.add_argument("--scenario", choices=("normal", "peak", "closure"), default="normal")
     parser.add_argument("--orders", type=int, default=30, help="基础订单量；高峰场景为其两倍")
     parser.add_argument("--altitude", type=float, default=45)
@@ -18,13 +20,60 @@ def main():
     parser.add_argument("--seed", type=int, default=20261015)
     parser.add_argument("--design-seed", type=int, default=DEFAULT_DESIGN_SEED)
     parser.add_argument("--seeds", default="20261015,20261016,20261017,20261018,20261019", help="批量评价种子，逗号分隔")
-    parser.add_argument("--scene", type=Path, help="自定义本地米制地图（Excel模板.xlsx或.json）")
+    parser.add_argument("--scene", type=Path, help="Excel/JSON地图，或图形模式下导入的地图图片")
     parser.add_argument("--output", type=Path, help="输出目录")
     parser.add_argument("--deconflict", action=argparse.BooleanOptionalAction, default=True, help="开启或关闭错峰起飞；两种模式都检测冲突")
     parser.add_argument("--separation", type=float, default=20, help="同高度间距阈值，米；为模型参数")
     parser.add_argument("--departure-step", type=float, default=5, help="冲突时的起飞推迟搜索步长，秒")
     parser.add_argument("--max-airspace-delay", type=float, default=600)
     args = parser.parse_args()
+    if args.mode == "sites":
+        from site_selection import run_site_study, export_site_study
+        try:
+            if args.budget is not None:
+                raise ValueError("起飞点优选使用--drones设置无人机数量，无需--budget参数")
+            seeds = [int(v.strip()) for v in args.seeds.split(",") if v.strip()]
+            c = Config(order_count=args.orders, altitude=args.altitude, risk_weight=args.risk_weight,
+                       drone_count=args.drones, seed=args.seed, deconflict=args.deconflict,
+                       separation=args.separation, departure_step=args.departure_step,
+                       max_airspace_delay=args.max_airspace_delay).validated()
+            study = run_site_study(c, args.scene, seeds, args.design_seed,
+                                   progress=lambda done, total, message: print(message, flush=True),
+                                   design_seed_count=args.design_seed_count)
+            output = export_site_study(study, args.output or ROOT/"results/sites")
+            for row in study["summary"]:
+                print(f"{row['scenario']} | {row['plan_name']} | {row['configuration']} | 准时率{row['on_time_rate']:.1%} | 配送{row['mean_delivery']}秒")
+            print(f"结果已保存：{output.resolve()}")
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+        return
+    if args.mode == "facility":
+        from facility import run_facility_study, export_facility_study
+        try:
+            seeds = [int(v.strip()) for v in args.seeds.split(",") if v.strip()]
+            c = Config(order_count=args.orders, altitude=args.altitude, risk_weight=args.risk_weight,
+                       drone_count=args.drones, seed=args.seed, deconflict=args.deconflict,
+                       separation=args.separation, departure_step=args.departure_step,
+                       max_airspace_delay=args.max_airspace_delay).validated()
+            last_progress = [-1]
+            def progress(done, total, message):
+                percent = int(done/max(1,total)*100)
+                if not total or percent//10 != last_progress[0]:
+                    print(message, flush=True)
+                    last_progress[0] = percent//10
+            study = run_facility_study(c, args.scene, args.budget, seeds, args.design_seed, progress,
+                                       design_seed_count=args.design_seed_count)
+            output = export_facility_study(study, args.output or ROOT/"results"/"facility")
+            for row in study["summary"]:
+                print(f"{row['scenario']} | {row['plan_name']} | {row['configuration']} | 成本{row['cost']:g} | 准时率{row['on_time_rate']:.1%} | 配送{row['mean_delivery']}秒")
+            print(f"结果已保存：{output.resolve()}")
+        except (ValueError, OSError) as error:
+            parser.error(str(error))
+        return
+    if args.scene and args.mode != "gui":
+        from image_map import IMAGE_SUFFIXES
+        if args.scene.suffix.lower() in IMAGE_SUFFIXES:
+            parser.error("图片地图请先用图形模式确认尺度和手动楼高，保存为JSON后再运行命令行实验")
     c = Config(scenario=args.scenario, order_count=args.orders, altitude=args.altitude,
                risk_weight=args.risk_weight, drone_count=args.drones, seed=args.seed,
                deconflict=args.deconflict, separation=args.separation, departure_step=args.departure_step,

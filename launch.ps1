@@ -1,4 +1,4 @@
-param([ValidateSet('gui','single','batch','safety')][string]$Mode = 'gui')
+param([ValidateSet('gui','single','batch','safety','sites','facility')][string]$Mode = 'gui')
 $ErrorActionPreference = 'Stop'
 $bundledPython = Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 Push-Location -LiteralPath $PSScriptRoot

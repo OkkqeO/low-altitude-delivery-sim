@@ -47,7 +47,7 @@ def _xlsx_sheets(path: Path) -> dict:
             result = {}
             for sheet in workbook.findall("m:sheets/m:sheet", NS):
                 name = sheet.attrib["name"]
-                if name not in ("地图设置", *TABLES):
+                if name not in ("地图设置", "场站等级", *TABLES):
                     continue
                 target = rels[sheet.attrib[REL_ID]]
                 member = target.lstrip("/") if target.startswith("/") else posixpath.normpath("xl/" + target)
@@ -133,12 +133,18 @@ def load_excel_scene(path: str | Path) -> dict:
         for col, header in enumerate(headers):
             if cells.get(f"{chr(65+col)}5") != header:
                 raise ValueError(f"“{sheet_name}”第5行表头应包含“{header}”，请保留原表头")
+        if collection == "pads":
+            for column, expected in (("D", "允许等级"), ("E", "场地附加成本")):
+                if (any(ref.startswith(column) and int(re.search(r"\d+", ref)[0]) >= 5 for ref in cells)
+                        and cells.get(column+"5") != expected):
+                    raise ValueError(f"“起降场”{column}5表头须为“{expected}”，避免忽略设施约束")
         rows = sorted({int(re.search(r"\d+", ref)[0]) for ref in cells})
         for row in rows:
             if row < 6:
                 continue
             values = [cells.get(f"{chr(65+col)}{row}") for col in range(len(fields))]
-            if all(v is None for v in values):
+            has_facility_values = collection == "pads" and any(cells.get(f"{column}{row}") is not None for column in ("D", "E"))
+            if all(v is None for v in values) and not has_facility_values:
                 continue
             item = {"id": f"{prefix}{len(scene[collection])+1}"}
             for field, header, value in zip(fields, headers, values):
@@ -154,9 +160,38 @@ def load_excel_scene(path: str | Path) -> dict:
                 raise ValueError(f"{location} 需求权重须大于0；留空使用1")
             if collection == "risk_zones" and (min(item["rx"], item["ry"]) <= 0 or not 0 <= item["weight"] <= 1):
                 raise ValueError(f"{location} 热点半径须大于0，强度须在0至1之间")
+            if collection == "pads":
+                if cells.get("D5") == "允许等级":
+                    value = cells.get(f"D{row}")
+                    item["allowed_levels"] = [v.strip() for v in str(value or "").replace("，", ",").split(",") if v.strip() and v.strip() != "禁用"]
+                if cells.get("E5") == "场地附加成本":
+                    item["site_cost"] = _number(cells.get(f"E{row}"), location+" 场地附加成本", 0.)
             scene[collection].append(item)
     if len(scene["pads"]) < 2 or not scene["deliveries"]:
         raise ValueError("请在“起降场”填写至少2个候选位置，在“配送点”填写至少1个位置")
+    grade_cells = sheets.get("场站等级")
+    if grade_cells is not None:
+        headers = ("等级编号", "等级名称", "建设成本", "驻机上限", "起飞服务秒数", "降落服务秒数")
+        if any(grade_cells.get(f"{chr(65+i)}5") != header for i, header in enumerate(headers)):
+            raise ValueError("“场站等级”第5行表头不完整，请使用分级选址模板")
+        levels = []
+        for row in sorted({int(re.search(r"\d+", ref)[0]) for ref in grade_cells}):
+            if row < 6:
+                continue
+            values = [grade_cells.get(f"{chr(65+i)}{row}") for i in range(6)]
+            if all(value is None for value in values):
+                continue
+            level = {"id": str(values[0] or "").strip(), "name": str(values[1] or "").strip()}
+            for field, value in zip(("cost", "max_drones", "takeoff_service", "landing_service"), values[2:]):
+                level[field] = _number(value, f"“场站等级”第{row}行 {field}")
+            if level["max_drones"].is_integer():
+                level["max_drones"] = int(level["max_drones"])
+            levels.append(level)
+        from facility_schema import DEFAULT_SOURCE
+        scene["facility_planning"] = {"levels": levels, "budget": _number(grade_cells.get("B2"), "“场站等级”B2预算", 260.),
+                                      "parameter_source": str(grade_cells.get("B3") or DEFAULT_SOURCE)}
+    from facility_schema import validate_optional_facilities
+    validate_optional_facilities(scene)
     return scene
 
 

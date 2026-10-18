@@ -1,0 +1,23 @@
+[
+  {
+    "state": "idle",
+    "root_destroyed": true,
+    "playback_stopped": true,
+    "progress_animation_stopped": true,
+    "no_visible_window": true
+  },
+  {
+    "state": "playing",
+    "root_destroyed": true,
+    "playback_stopped": true,
+    "progress_animation_stopped": true,
+    "no_visible_window": true
+  },
+  {
+    "state": "computing",
+    "root_destroyed": true,
+    "playback_stopped": true,
+    "progress_animation_stopped": true,
+    "no_visible_window": true
+  }
+]

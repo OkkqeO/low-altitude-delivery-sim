@@ -1,0 +1,114 @@
+[
+  {
+    "time": 5.0,
+    "method": "dissolve",
+    "original_cut_difference": 140.4125184657592,
+    "revised_cut_difference": 0.0052198744328373955,
+    "reduction_percent": 99.99628247218277
+  },
+  {
+    "time": 17.466666666666665,
+    "method": "dissolve",
+    "original_cut_difference": 29.546662314023425,
+    "revised_cut_difference": 0.001127730294396961,
+    "reduction_percent": 99.99618322271934
+  },
+  {
+    "time": 29.1,
+    "method": "matched_camera",
+    "original_cut_difference": 28.175329086208716,
+    "revised_cut_difference": 0.0031556663501107946,
+    "reduction_percent": 99.98879989532526
+  },
+  {
+    "time": 40.5,
+    "method": "matched_camera",
+    "original_cut_difference": 27.298225308641975,
+    "revised_cut_difference": 0.005744170096021948,
+    "reduction_percent": 99.9789577160014
+  },
+  {
+    "time": 59.56666666666667,
+    "method": "dissolve",
+    "original_cut_difference": 25.823533291125884,
+    "revised_cut_difference": 0.0033139442861665085,
+    "reduction_percent": 99.987166960273
+  },
+  {
+    "time": 66.6,
+    "method": "matched_camera",
+    "original_cut_difference": 23.855953888361295,
+    "revised_cut_difference": 0.08590534979423868,
+    "reduction_percent": 99.63989974915172
+  },
+  {
+    "time": 82.93333333333334,
+    "method": "matched_camera",
+    "original_cut_difference": 30.23056808589216,
+    "revised_cut_difference": 0.05687453835601984,
+    "reduction_percent": 99.81186414296144
+  },
+  {
+    "time": 99.13333333333334,
+    "method": "matched_camera",
+    "original_cut_difference": 28.914018808694735,
+    "revised_cut_difference": 0.11592210087580458,
+    "reduction_percent": 99.59907994235327
+  },
+  {
+    "time": 116.66666666666667,
+    "method": "dissolve",
+    "original_cut_difference": 72.74984172206395,
+    "revised_cut_difference": 0.301542550385143,
+    "reduction_percent": 99.58550762002044
+  },
+  {
+    "time": 133.96666666666667,
+    "method": "dissolve",
+    "original_cut_difference": 45.8826566951567,
+    "revised_cut_difference": 1.978474200696423e-05,
+    "reduction_percent": 99.99995687969391
+  },
+  {
+    "time": 150.46666666666667,
+    "method": "matched_camera",
+    "original_cut_difference": 37.52807454890788,
+    "revised_cut_difference": 0.09337738735886884,
+    "reduction_percent": 99.75117991402097
+  },
+  {
+    "time": 165.33333333333334,
+    "method": "matched_camera",
+    "original_cut_difference": 26.419363986493615,
+    "revised_cut_difference": 0.06603487390524428,
+    "reduction_percent": 99.75005123537795
+  },
+  {
+    "time": 177.4,
+    "method": "matched_camera",
+    "original_cut_difference": 29.80583254194365,
+    "revised_cut_difference": 0.04187110900073863,
+    "reduction_percent": 99.85952041788528
+  },
+  {
+    "time": 187.4,
+    "method": "dissolve",
+    "original_cut_difference": 26.22994156906194,
+    "revised_cut_difference": 0.0008540413633006226,
+    "reduction_percent": 99.99674402109873
+  },
+  {
+    "time": 202.8,
+    "method": "dissolve",
+    "original_cut_difference": 21.93443006753192,
+    "revised_cut_difference": 0.006862008019415427,
+    "reduction_percent": 99.96871581345725
+  },
+  {
+    "time": 212.16666666666666,
+    "method": "dissolve",
+    "original_cut_difference": 28.55755381449826,
+    "revised_cut_difference": 0.0009364777883296402,
+    "reduction_percent": 99.99672073527582
+  }
+]

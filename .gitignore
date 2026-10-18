@@ -26,11 +26,20 @@ desktop.ini
 
 # Local verification artifacts; selected screenshots live in docs/images
 .verification/
+.image-deps/
+.chart-data-*/
+
+# Video sources and intermediate renders stay local; keep final deliverables.
+参赛材料/演示视频/01_录屏素材/
+参赛材料/演示视频/02_音频干音与配乐/
+参赛材料/演示视频/制作工程/
 
 # Keep published batch/safety evidence; ignore ad-hoc experiment outputs
 results/*
 !results/batch/
 !results/safety/
+!results/facility_v1/
+!results/sites_v1/
 
 # Packaging output
 build/
