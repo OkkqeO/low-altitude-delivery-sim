@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "new_plan_runs": 240,
+  "new_task_records_including_repeated_orders": 10800,
+  "source_and_all_output_hashes_match": true,
+  "repeat_evaluation_same_metrics": true,
+  "snapshot_differences_only_calculated_at": true,
+  "raw_metrics_rows_including_initial_cohort": 300,
+  "paired_difference_rows": 200,
+  "metric_difference_summary_rows": 112,
+  "total_bytes": 11375905,
+  "initial_export_retained": ".verification\\competition_20261018\\holdout_first_export_backup"
+}

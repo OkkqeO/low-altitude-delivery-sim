@@ -1,0 +1,78 @@
+{
+  "checked_at_beijing": "2026-10-19T00:47:03.286086+08:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "protocol_sha256": "785370a0da8e021195d61b99c5320aa7189b35600a941af89dfe3ecfbe5fae9f",
+  "prospective_order_passed": true,
+  "output_hash_checks": {
+    "design_seed_stats.csv": true,
+    "design_stability.json": true,
+    "design_subset_candidate_scores.csv": true,
+    "difference_summary.csv": true,
+    "independent_diagnostic_audit.json": true,
+    "independent_trajectory_audit.json": true,
+    "paired_differences.csv": true,
+    "raw_metrics.csv": true,
+    "第二轮新增种子验证.md": true,
+    "demo_5/decision_comparisons.csv": true,
+    "demo_5/decision_diagnostics.json": true,
+    "demo_5/decision_diagnostics.md": true,
+    "demo_5/raw_metrics.csv": true,
+    "demo_5/summary.csv": true,
+    "studies/demo_5.json.gz": true,
+    "studies/user_map_h30_d5.json.gz": true,
+    "user_map_h30_d5/decision_comparisons.csv": true,
+    "user_map_h30_d5/decision_diagnostics.json": true,
+    "user_map_h30_d5/decision_diagnostics.md": true,
+    "user_map_h30_d5/raw_metrics.csv": true,
+    "user_map_h30_d5/summary.csv": true
+  },
+  "rule_and_core_source_hash_checks": {
+    "decision_support.py": true,
+    "cases/run_decision_validation.py": true,
+    "cases/verify_continuous_model.py": true,
+    "tests/test_decision_support.py": true,
+    "engine.py": true,
+    "site_selection.py": true,
+    "facility.py": true,
+    "airspace.py": true,
+    "reporting.py": true
+  },
+  "csv_row_counts": {
+    "raw_metrics.csv": 240,
+    "paired_differences.csv": 160,
+    "difference_summary.csv": 32,
+    "design_seed_stats.csv": 258,
+    "design_subset_candidate_scores.csv": 172
+  },
+  "studies": {
+    "demo_5": {
+      "results": 40,
+      "task_records": 5400,
+      "new_seeds_separate": true,
+      "frozen_layouts_and_common_orders": true,
+      "diagnostic_means_recomputed_from_jobs": true
+    },
+    "user_map_h30_d5": {
+      "results": 40,
+      "task_records": 5400,
+      "new_seeds_separate": true,
+      "frozen_layouts_and_common_orders": true,
+      "diagnostic_means_recomputed_from_jobs": true
+    }
+  },
+  "trajectory_audit_groups": 80,
+  "trajectory_audit_totals": {
+    "task_records": 10800,
+    "trajectory_segments": 1120502,
+    "overlapping_segment_pairs_checked": 1692879,
+    "zero_duration_interval_pairs_excluded": 369,
+    "continuous_episode_violations": 0,
+    "resource_overlaps": 0
+  },
+  "minimum_distance_m_on_positive_overlaps": 20.0,
+  "leave_one_out_changes_of_three": {
+    "demo_5": 2,
+    "user_map_h30_d5": 2
+  },
+  "limits": "Hash, count, seed, job-mean and existing-audit aggregation verification only. This script does not rerun trajectory geometry or prove real flight safety."
+}

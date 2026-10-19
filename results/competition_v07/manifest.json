@@ -1,0 +1,64 @@
+{
+  "version": "0.7.0-sites",
+  "purpose": "追加独立种子评价；冻结布局、不调参，不是新地图外部验证或统计显著性检验",
+  "new_evaluation_seeds": [
+    20261020,
+    20261021,
+    20261022,
+    20261023,
+    20261024,
+    20261025,
+    20261026,
+    20261027,
+    20261028,
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035,
+    20261036,
+    20261037,
+    20261038,
+    20261039
+  ],
+  "metric_directions": {
+    "on_time_rate": "higher",
+    "mean_delivery": "lower",
+    "p95_delivery": "lower",
+    "mean_exposure": "lower",
+    "completion_rate": "higher",
+    "failed_orders": "lower",
+    "air_conflict_count": "lower"
+  },
+  "difference_definition": "运行优选减基线；各指标独立统计，无合成总胜率",
+  "initial_and_additional_cohorts_separate": true,
+  "source_study_sha256": {
+    "results/sites_v1/study.json": "c9696ea0dfde409962ea8d464c4541fba31b3aafb6a66911b2f16a8a899db141",
+    "results/user_map_300m/studies/h30_d5.json.gz": "4160c915e0069cb85ade34cfd2873ad64115d9ab08558f936895fb2626fe5446"
+  },
+  "source_sha256": {
+    "engine.py": "565121e6878cff34ca95f261aa3112b7a504229e35613299a43414ae30ab0ca6",
+    "site_selection.py": "95cfdf81b4bcebbdee6428d3d36128bdab9605821904f212cc55a0a34dd8055a",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609",
+    "reporting.py": "2c06a7a99d504b9f7aa6124b8f7c4dac808f18d5874e4628a741a7a54493e9ad",
+    "facility.py": "f8473759f62aadf6e4ae9619681045da159be3676d5d7be46639d03ad1f4f34e",
+    "cases/run_competition_holdout.py": "4e6e1c3cdfe61f7983c8ac28e0fe98349b43a675d329634dec934a02d5b926fd",
+    "cases/verify_continuous_model.py": "7343629559a2e7e11487f06bb8e5216a534a3c588e4ef8d958538e1ac41205b5"
+  },
+  "output_sha256": {
+    "difference_summary.csv": "3c1b8892e5c3b1f1a665937c980c40806f0603c39d12ad2d4bca4a128188e5ab",
+    "frozen_designs.json": "95474049cbc4e62fadb1e729bfb1a88ca9db5ea7ed4f7943e557aabb6cb04953",
+    "independent_audit.json": "1d59385edfbacd810a38148afefcbe861d9d6bf47de1228a06e37fbaa9cc37a4",
+    "paired_differences.csv": "8d4e7c11f3804315838c053d33aa90564b6cc035f608f538aeb0e78591074e7a",
+    "raw_metrics.csv": "c9d45c0ba5ffc18116bbe60c6f1fcb43d69b1f8cfd555316b67cec3810304626",
+    "追加种子检验.md": "a871b5c1ccffaebf685562df030a649031c883bb590e0303bf86bc7249adf125",
+    "studies/demo_5.json.gz": "9ad3448f673fdaf5199418cec1660dcfc93820b3d3f7a9feeada11afa7627bda",
+    "studies/user_map_h30_d5.json.gz": "1cbe9bc30c20c678f174f8fa28b1a254a84b337256c4fd05cf1e4d0c6ff5efbf"
+  },
+  "new_plan_runs": 240,
+  "new_task_records_including_repeated_orders": 10800,
+  "continuous_episode_definition": "正时长同高度空中区间内严格小于20米；零时长交接不计事件；地面起飞准备与降落服务排除",
+  "limits": "模型生成订单；截图位置/实际点位/楼高/人流未核实；固定巡航高度理想运动，非真实飞行验证"
+}

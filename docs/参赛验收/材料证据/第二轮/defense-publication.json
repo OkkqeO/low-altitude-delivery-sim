@@ -1,0 +1,52 @@
+{
+  "pages": 11,
+  "sha256": "6c2d06f13c4450625d6f8090d8b42677039d71a4293e198841ce5b40e116967d",
+  "bytes": 1381920,
+  "roundtrip": [
+    {
+      "slide": 1,
+      "pixel_identical": true
+    },
+    {
+      "slide": 2,
+      "pixel_identical": true
+    },
+    {
+      "slide": 3,
+      "pixel_identical": true
+    },
+    {
+      "slide": 4,
+      "pixel_identical": true
+    },
+    {
+      "slide": 5,
+      "pixel_identical": true
+    },
+    {
+      "slide": 6,
+      "pixel_identical": true
+    },
+    {
+      "slide": 7,
+      "pixel_identical": true
+    },
+    {
+      "slide": 8,
+      "pixel_identical": true
+    },
+    {
+      "slide": 9,
+      "pixel_identical": true
+    },
+    {
+      "slide": 10,
+      "pixel_identical": true
+    },
+    {
+      "slide": 11,
+      "pixel_identical": true
+    }
+  ],
+  "native_powerpoint_tested": false
+}

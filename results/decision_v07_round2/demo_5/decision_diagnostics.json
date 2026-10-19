@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "study_version": "0.7.0-sites",
+  "minimum_on_time_rate": 0.9,
+  "threshold_basis": "团队可调研究目标；不是赛事、法规或已验证运营要求；只考察跨运行等权平均准时率",
+  "data_role": "冻结布局的评价集诊断，不是新优化、调参或因果解释",
+  "metric_basis": "失败率逐运行failed_orders/total_orders后等权；其他指标逐运行等权；任一观测无效则该指标待验证",
+  "pareto_tolerance": 1e-08,
+  "difference_definition": "当前方案减对应基线；失败率/秒数/暴露越低越好，准时率越高越好",
+  "evaluation_seeds": [
+    20261040,
+    20261041,
+    20261042,
+    20261043,
+    20261044,
+    20261045,
+    20261046,
+    20261047,
+    20261048,
+    20261049,
+    20261050,
+    20261051,
+    20261052,
+    20261053,
+    20261054,
+    20261055,
+    20261056,
+    20261057,
+    20261058,
+    20261059
+  ],
+  "design_seeds": [
+    20365744,
+    20470473,
+    20575202
+  ],
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "scenario_name": "正常",
+      "plans": [
+        {
+          "plan": "fixed",
+          "plan_name": "固定位置",
+          "metrics": {
+            "failure_rate": 0.0,
+            "on_time_rate": 1.0,
+            "mean_delivery": 182.48738966951848,
+            "mean_exposure": 0.925192139591543
+          },
+          "runs": 20,
+          "evaluation_runs_complete": true,
+          "metric_status": "verified",
+          "service_status": "meets",
+          "pareto_status": "dominated",
+          "dominated_by": [
+            "combined"
+          ],
+          "baseline_differences": {
+            "fixed": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": 0.0,
+              "mean_exposure": 0.0
+            },
+            "distance": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": 45.150169524415844,
+              "mean_exposure": -0.22788955202005323
+            }
+          }
+        },
+        {
+          "plan": "distance",
+          "plan_name": "距离优先",
+          "metrics": {
+            "failure_rate": 0.0,
+            "on_time_rate": 1.0,
+            "mean_delivery": 137.33722014510263,
+            "mean_exposure": 1.1530816916115962
+          },
+          "runs": 20,
+          "evaluation_runs_complete": true,
+          "metric_status": "verified",
+          "service_status": "meets",
+          "pareto_status": "non_dominated",
+          "dominated_by": [],
+          "baseline_differences": {
+            "fixed": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": -45.150169524415844,
+              "mean_exposure": 0.22788955202005323
+            },
+            "distance": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": 0.0,
+              "mean_exposure": 0.0
+            }
+          }
+        },
+        {
+          "plan": "combined",
+          "plan_name": "设计优选（原运行优选）",
+          "metrics": {
+            "failure_rate": 0.0,
+            "on_time_rate": 1.0,
+            "mean_delivery": 168.10752096819766,
+            "mean_exposure": 0.8680502749112516
+          },
+          "runs": 20,
+          "evaluation_runs_complete": true,
+          "metric_status": "verified",
+          "service_status": "meets",
+          "pareto_status": "non_dominated",
+          "dominated_by": [],
+          "baseline_differences": {
+            "fixed": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": -14.379868701320817,
+              "mean_exposure": -0.057141864680291365
+            },
+            "distance": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": 30.770300823095027,
+              "mean_exposure": -0.2850314167003446
+            }
+          }
+        }
+      ],
+      "recommendation_status": "comparison_required",
+      "message": "存在达到准时率研究目标的方案；仅列候选与指标取舍，不自动推荐最优。"
+    },
+    {
+      "scenario": "peak",
+      "scenario_name": "高峰",
+      "plans": [
+        {
+          "plan": "fixed",
+          "plan_name": "固定位置",
+          "metrics": {
+            "failure_rate": 0.0,
+            "on_time_rate": 0.3408333333333333,
+            "mean_delivery": 868.5717154084352,
+            "mean_exposure": 0.9596742134569718
+          },
+          "runs": 20,
+          "evaluation_runs_complete": true,
+          "metric_status": "verified",
+          "service_status": "below",
+          "pareto_status": "dominated",
+          "dominated_by": [
+            "combined"
+          ],
+          "baseline_differences": {
+            "fixed": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": 0.0,
+              "mean_exposure": 0.0
+            },
+            "distance": {
+              "failure_rate": 0.0,
+              "on_time_rate": -0.07750000000000001,
+              "mean_delivery": 146.17406162776854,
+              "mean_exposure": -0.22745907668383736
+            }
+          }
+        },
+        {
+          "plan": "distance",
+          "plan_name": "距离优先",
+          "metrics": {
+            "failure_rate": 0.0,
+            "on_time_rate": 0.41833333333333333,
+            "mean_delivery": 722.3976537806667,
+            "mean_exposure": 1.1871332901408091
+          },
+          "runs": 20,
+          "evaluation_runs_complete": true,
+          "metric_status": "verified",
+          "service_status": "below",
+          "pareto_status": "non_dominated",
+          "dominated_by": [],
+          "baseline_differences": {
+            "fixed": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.07750000000000001,
+              "mean_delivery": -146.17406162776854,
+              "mean_exposure": 0.22745907668383736
+            },
+            "distance": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.0,
+              "mean_delivery": 0.0,
+              "mean_exposure": 0.0
+            }
+          }
+        },
+        {
+          "plan": "combined",
+          "plan_name": "设计优选（原运行优选）",
+          "metrics": {
+            "failure_rate": 0.0,
+            "on_time_rate": 0.3808333333333333,
+            "mean_delivery": 789.7888423289988,
+            "mean_exposure": 0.8653008233927122
+          },
+          "runs": 20,
+          "evaluation_runs_complete": true,
+          "metric_status": "verified",
+          "service_status": "below",
+          "pareto_status": "non_dominated",
+          "dominated_by": [],
+          "baseline_differences": {
+            "fixed": {
+              "failure_rate": 0.0,
+              "on_time_rate": 0.03999999999999998,
+              "mean_delivery": -78.7828730794364,
+              "mean_exposure": -0.0943733900642596
+            },
+            "distance": {
+              "failure_rate": 0.0,
+              "on_time_rate": -0.03750000000000003,
+              "mean_delivery": 67.39118854833214,
+              "mean_exposure": -0.32183246674809696
+            }
+          }
+        }
+      ],
+      "recommendation_status": "not_recommended",
+      "message": "三方案均未达到90.0%准时率研究目标，当前场景不推荐采用任何方案；需复核需求、机队或运行条件。"
+    }
+  ],
+  "design_comparisons": [
+    {
+      "baseline": "fixed",
+      "first_difference_layer": 2,
+      "layer_name": "非准时率",
+      "design_direction": "combined_better",
+      "near_tie_at_first_difference": false,
+      "first_substantive_difference_layer": 2,
+      "substantive_layer_name": "非准时率",
+      "substantive_direction": "combined_better",
+      "combined_objective": [
+        0.0,
+        0.2972222222222222,
+        132.2139804981256,
+        483.32432010647034
+      ],
+      "baseline_objective": [
+        0.0,
+        0.3138888888888889,
+        162.9304279719996,
+        533.4371822487126
+      ],
+      "evaluation_reversals": []
+    },
+    {
+      "baseline": "distance",
+      "first_difference_layer": 2,
+      "layer_name": "非准时率",
+      "design_direction": "combined_better",
+      "near_tie_at_first_difference": false,
+      "first_substantive_difference_layer": 2,
+      "substantive_layer_name": "非准时率",
+      "substantive_direction": "combined_better",
+      "combined_objective": [
+        0.0,
+        0.2972222222222222,
+        132.2139804981256,
+        483.32432010647034
+      ],
+      "baseline_objective": [
+        0.0,
+        0.3111111111111111,
+        133.09985320883143,
+        480.62857558161954
+      ],
+      "evaluation_reversals": [
+        {
+          "scenario": "peak",
+          "metric": "on_time_rate",
+          "design_difference": 0.02777777777777779,
+          "evaluation_difference": -0.03750000000000003
+        },
+        {
+          "scenario": "peak",
+          "metric": "mean_delivery",
+          "design_difference": -12.096331146529678,
+          "evaluation_difference": 67.39118854833214
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "服务门槛判断使用场景跨运行平均值，不保证每个种子或每个订单达标。",
+    "帕累托非劣仅相对于本次三方案和四指标，不证明全候选布局或真实世界最优。",
+    "原词典序按精确浮点首分歧解释；诊断比较使用1e-8容差，近似平局不能当作实质优势。",
+    "设计/评价反转只描述已有样本差异，不能据此推断因果或调整后重用评价集。",
+    "均配送与暴露按成功订单统计；固定高度理想运动，不含真实起降或飞行验证。"
+  ]
+}

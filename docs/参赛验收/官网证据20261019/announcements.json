@@ -1,0 +1,93 @@
+{
+  "code": 0,
+  "success": true,
+  "message": "ok",
+  "data": [
+    {
+      "id": 23,
+      "title": "关于2026年中国仿真创新应用大赛报名工作的通知",
+      "summary": null,
+      "coverImage": "/bisai/public/cms/legacy/0030bdc6-2176-4091-a2d6-ec503e716396.png",
+      "author": null,
+      "isTop": 1,
+      "status": 1,
+      "viewCount": 12418,
+      "publishedAt": "2026-09-23T05:47:57.726Z",
+      "category": {
+        "id": 2,
+        "name": "通知公告",
+        "code": "announcement"
+      }
+    },
+    {
+      "id": 28,
+      "title": "中国仿真创新应用大赛评审管理办法",
+      "summary": null,
+      "coverImage": null,
+      "author": null,
+      "isTop": 0,
+      "status": 1,
+      "viewCount": 1626,
+      "publishedAt": "2026-10-03T02:57:20.730Z",
+      "category": {
+        "id": 2,
+        "name": "通知公告",
+        "code": "announcement"
+      }
+    },
+    {
+      "id": 27,
+      "title": "中国仿真创新应用大赛章程（2026版）",
+      "summary": null,
+      "coverImage": null,
+      "author": null,
+      "isTop": 0,
+      "status": 1,
+      "viewCount": 3785,
+      "publishedAt": "2026-10-03T02:51:37.675Z",
+      "category": {
+        "id": 2,
+        "name": "通知公告",
+        "code": "announcement"
+      }
+    },
+    {
+      "id": 26,
+      "title": "中国仿真创新应用大赛竞赛诚信规范手册",
+      "summary": null,
+      "coverImage": "/bisai/public/cms/legacy/af6d1db2-8ce5-46d0-b128-56bc1afedb5b.png",
+      "author": null,
+      "isTop": 0,
+      "status": 1,
+      "viewCount": 764,
+      "publishedAt": "2026-10-03T02:38:42.496Z",
+      "category": {
+        "id": 2,
+        "name": "通知公告",
+        "code": "announcement"
+      }
+    },
+    {
+      "id": 10,
+      "title": "2025年全国仿真创新应用大赛总决赛获奖名单",
+      "summary": null,
+      "coverImage": null,
+      "author": null,
+      "isTop": 0,
+      "status": 1,
+      "viewCount": 2449,
+      "publishedAt": "2026-09-16T00:35:27.215Z",
+      "category": {
+        "id": 2,
+        "name": "通知公告",
+        "code": "announcement"
+      }
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "size": 10,
+    "total": 5,
+    "totalPages": 1
+  }
+}

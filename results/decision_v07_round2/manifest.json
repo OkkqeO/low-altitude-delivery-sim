@@ -1,0 +1,73 @@
+{
+  "protocol_path": "docs/参赛验收/第二轮实验协议.json",
+  "protocol_sha256": "785370a0da8e021195d61b99c5320aa7189b35600a941af89dfe3ecfbe5fae9f",
+  "evaluation_started_at_beijing": "2026-10-19T00:17:16.119903+08:00",
+  "evaluation_finished_at_beijing": "2026-10-19T00:19:11.302357+08:00",
+  "new_evaluation_seeds": [
+    20261040,
+    20261041,
+    20261042,
+    20261043,
+    20261044,
+    20261045,
+    20261046,
+    20261047,
+    20261048,
+    20261049,
+    20261050,
+    20261051,
+    20261052,
+    20261053,
+    20261054,
+    20261055,
+    20261056,
+    20261057,
+    20261058,
+    20261059
+  ],
+  "new_plan_runs": 240,
+  "new_task_records_including_repeats": 10800,
+  "core_source_sha256": {
+    "engine.py": "565121e6878cff34ca95f261aa3112b7a504229e35613299a43414ae30ab0ca6",
+    "site_selection.py": "95cfdf81b4bcebbdee6428d3d36128bdab9605821904f212cc55a0a34dd8055a",
+    "facility.py": "f8473759f62aadf6e4ae9619681045da159be3676d5d7be46639d03ad1f4f34e",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609",
+    "reporting.py": "2c06a7a99d504b9f7aa6124b8f7c4dac808f18d5874e4628a741a7a54493e9ad"
+  },
+  "rule_source_sha256": {
+    "decision_support.py": "00cb625268234ad939cbe0071e6838b4a67e81302469ce9680e743d22ef24d68",
+    "cases/run_decision_validation.py": "b20a705a43bdebc412546033cf1f630980ef6266761aafe642fd5a08f7fa87a7",
+    "cases/verify_continuous_model.py": "7343629559a2e7e11487f06bb8e5216a534a3c588e4ef8d958538e1ac41205b5",
+    "tests/test_decision_support.py": "cf729d85e1ac656006967baebfab92e090c23327e007f60a8b7076f32ff5deab"
+  },
+  "old_source_studies_unchanged": true,
+  "diagnostic_did_not_mutate_studies": true,
+  "previous_counterexamples_retained": [
+    "results/sites_v1",
+    "results/user_map_300m",
+    "results/competition_v07"
+  ],
+  "output_sha256": {
+    "design_seed_stats.csv": "0e5ced7ad80b07947c9e47f5aa7bc0a6e96a959aa6d3705e5bb5c3fd6ce05f8a",
+    "design_stability.json": "c892d9b32b5da4551d16a376e5ca79dd06d48d0506156c08eebaa9d5f4fb4f40",
+    "design_subset_candidate_scores.csv": "91011c75ed0b231b89a2743baecfb78bec8160571bd97efac9bb6cbf550d464a",
+    "difference_summary.csv": "b0b9b2a730d0164ddbcaa7aa6764f44280f4e54f176b4e2411d57c654259dae4",
+    "independent_diagnostic_audit.json": "b953be1f29b10fff75570d37f36d5866168b04b9b7ba139079bd8eefa9f88c3c",
+    "independent_trajectory_audit.json": "bc1ea9a21f937a72f375fa9ba4f9aba67116f67d90f3b628f098e64aa5adfc8a",
+    "paired_differences.csv": "e17af4cdfba8a4a245da650814d3cdd7f7833c7d1d74a5b5b4ca1e115b0ba837",
+    "raw_metrics.csv": "252f0cccb2b397388479e375334900d35c4b64f4bef5fb196e70d02dbf4f8955",
+    "第二轮新增种子验证.md": "30a4a45e5a4c7b0027534e5abac175c291e7f6c83b39359bada09c51a7513f65",
+    "demo_5/decision_comparisons.csv": "3a5126d1e976ab728c1b13fb3bf972fa75533dafd8f76f43492863fa4d6cc53b",
+    "demo_5/decision_diagnostics.json": "db70b6b6336fb6634b489ce5f963620c5dcf6ea1646882caa7546d63d9aaf52d",
+    "demo_5/decision_diagnostics.md": "2212155311a1fc0c7e13483d2a821b64c8b888f0ff4c672d6e1c8750e9c014ed",
+    "demo_5/raw_metrics.csv": "6e1a27a594dd0c89878da58ea054d9e5aeb02c2d4a0a547c26d5f77ea054529d",
+    "demo_5/summary.csv": "09d60f377def8016293b9cb34e264745d2c1b78d2358ecfabe814d4be0339bf8",
+    "studies/demo_5.json.gz": "e87fb2483b6ab9f6b9df70f0058854f7b439ae57e5bc263b9ecb48aa11ab81ab",
+    "studies/user_map_h30_d5.json.gz": "9c001567254bbf33c66548e120a46ab95ad8cc7ce174d7de052b86476c9e7712",
+    "user_map_h30_d5/decision_comparisons.csv": "b562b5364161d86be06b9cb6e20aa31f9bdef4480267cc1d740d3c302554677a",
+    "user_map_h30_d5/decision_diagnostics.json": "80208e8535c1bd3146a749e560c0e94cbb52c47fbd3334bf5c8eb78934f87ca1",
+    "user_map_h30_d5/decision_diagnostics.md": "3c02ab36edf6d77b98a798d6caaec42f283fc7aad8152c20c38e6de6832533a3",
+    "user_map_h30_d5/raw_metrics.csv": "91761c1627901c6d19236240a2b6552cb376765084f9b208bf1dab12930ba4be",
+    "user_map_h30_d5/summary.csv": "c2c15371f58a244694288ffd8f390bcec8c3a0ad856db736f1a2b3292811d7f7"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "finished": "2026-10-18T22:03:08.9496131+08:00",
+  "elapsed_seconds": 17.0158638,
+  "command": "python -X utf8 run.py --mode sites --drones 5 --output .verification/competition_20261018/sites_reproduction",
+  "exit_code": 0
+}

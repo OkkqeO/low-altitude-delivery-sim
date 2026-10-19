@@ -566,19 +566,22 @@ def render_map(app):
             detail = f"{feature['name']} · {FEATURE_TYPES[feature['kind']]} · 地图分类候选"
             app.map_details.update({part: detail for part in parts})
 
-    from flight_map import flight_obstacles
-    for building in flight_obstacles(scene):
+    # The editor and simulation share every footprint. Height determines
+    # obstacle status, not whether a building exists on the map.
+    for building in scene["buildings"]:
         if not visible(building):
             continue
         blocked = building["height"]+scene["vertical_clearance"] >= scene["altitude"]
+        options = {"fill": "" if has_background else "#D5E0EE" if blocked else "#EDF2F7",
+                   "outline": "#597594" if blocked else "#A6B7C9", "width": px(1.3 if blocked else 1),
+                   "tags": ("building", f"building:{building['id']}")}
         x1, y1 = ox+building["x"]*scale, oy+building["y"]*scale
         x2, y2 = x1+building["w"]*scale, y1+building["h"]*scale
         if building.get("polygon"):
-            parts = canvas_polygon(canvas, building, scale, ox, oy, fill="" if has_background else "#D5E0EE",
-                                   outline="#9A6439" if blocked else "#597594", width=px(1.3))
+            parts = canvas_polygon(canvas, building, scale, ox, oy, **options)
             body = parts[0]
         else:
-            body = box(building, fill="#D5E0EE", outline="#597594", width=px(1))
+            body = box(building, **options)
         detail = f"{building['name']} · {building['height']:g}米 · "+("需绕行" if blocked else "可从上方通过")
         app.map_details[body] = detail
         if app.show_building_names.get():
@@ -628,7 +631,7 @@ def render_map(app):
     # Keep orientation and a scale-correct ruler visible while the map is panned.
     canvas.create_rectangle(0, 0, cw, px(25), fill="#F6F9FC", outline="", tags="map-overlay")
     canvas.create_rectangle(0, ch-px(29), cw, ch, fill="#F6F9FC", outline="", tags="map-overlay")
-    canvas.create_text(px(12), px(12), text="园区平面 / 米", anchor="w", fill=MUTED, font=(FONT, 9), tags="map-overlay")
+    canvas.create_text(px(12), px(12), text="园区平面 / 米 · 深色建筑需绕行，浅色可飞越", anchor="w", fill=MUTED, font=(FONT, 9), tags="map-overlay")
     canvas.create_text(cw-px(12), px(12), text="X →   Y ↓", anchor="e", fill=MUTED, font=("Segoe UI", 9), tags="map-overlay")
     target = px(100)/scale
     magnitude = 10**math.floor(math.log10(target))

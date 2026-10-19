@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 venv/
 env/
+node_modules/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -40,6 +41,12 @@ results/*
 !results/safety/
 !results/facility_v1/
 !results/sites_v1/
+!results/user_map_300m/
+!results/competition_v07/
+!results/decision_v07_round2/
+!results/map_consistency_20261019/
+# Full per-run exports are reproducible; complete compact snapshots live in studies/.
+results/user_map_300m/h*/
 
 # Packaging output
 build/

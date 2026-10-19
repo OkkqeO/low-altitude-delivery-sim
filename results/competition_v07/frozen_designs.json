@@ -1,0 +1,172 @@
+{
+  "demo_5": {
+    "base_config": {
+      "scenario": "normal",
+      "order_count": 30,
+      "altitude": 45,
+      "risk_weight": 2,
+      "seed": 20261015,
+      "drone_count": 5,
+      "speed": 9,
+      "takeoff_service": 25,
+      "landing_service": 20,
+      "delivery_service": 20,
+      "deadline": 600,
+      "deconflict": true,
+      "separation": 20,
+      "departure_step": 5,
+      "max_airspace_delay": 600
+    },
+    "design_seeds": [
+      20365744,
+      20470473,
+      20575202
+    ],
+    "initial_evaluation_seeds": [
+      20261015,
+      20261016,
+      20261017,
+      20261018,
+      20261019
+    ],
+    "additional_evaluation_seeds": [
+      20261020,
+      20261021,
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026,
+      20261027,
+      20261028,
+      20261029,
+      20261030,
+      20261031,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036,
+      20261037,
+      20261038,
+      20261039
+    ],
+    "choices": {
+      "fixed": {
+        "pad_ids": [
+          "S1",
+          "S5"
+        ],
+        "fleet_allocation": {
+          "S1": 3,
+          "S5": 2
+        }
+      },
+      "distance": {
+        "pad_ids": [
+          "S3",
+          "S7"
+        ],
+        "fleet_allocation": {
+          "S3": 3,
+          "S7": 2
+        }
+      },
+      "combined": {
+        "pad_ids": [
+          "S6",
+          "S8"
+        ],
+        "fleet_allocation": {
+          "S6": 3,
+          "S8": 2
+        }
+      }
+    }
+  },
+  "user_map_h30_d5": {
+    "base_config": {
+      "scenario": "normal",
+      "order_count": 30,
+      "altitude": 30,
+      "risk_weight": 2,
+      "seed": 20261015,
+      "drone_count": 5,
+      "speed": 9,
+      "takeoff_service": 25,
+      "landing_service": 20,
+      "delivery_service": 20,
+      "deadline": 600,
+      "deconflict": true,
+      "separation": 20,
+      "departure_step": 5,
+      "max_airspace_delay": 600
+    },
+    "design_seeds": [
+      20365744,
+      20470473,
+      20575202
+    ],
+    "initial_evaluation_seeds": [
+      20261015,
+      20261016,
+      20261017,
+      20261018,
+      20261019
+    ],
+    "additional_evaluation_seeds": [
+      20261020,
+      20261021,
+      20261022,
+      20261023,
+      20261024,
+      20261025,
+      20261026,
+      20261027,
+      20261028,
+      20261029,
+      20261030,
+      20261031,
+      20261032,
+      20261033,
+      20261034,
+      20261035,
+      20261036,
+      20261037,
+      20261038,
+      20261039
+    ],
+    "choices": {
+      "fixed": {
+        "pad_ids": [
+          "S1",
+          "S5"
+        ],
+        "fleet_allocation": {
+          "S1": 3,
+          "S5": 2
+        }
+      },
+      "distance": {
+        "pad_ids": [
+          "S1",
+          "S4"
+        ],
+        "fleet_allocation": {
+          "S1": 3,
+          "S4": 2
+        }
+      },
+      "combined": {
+        "pad_ids": [
+          "S5",
+          "S6"
+        ],
+        "fleet_allocation": {
+          "S5": 3,
+          "S6": 2
+        }
+      }
+    }
+  }
+}

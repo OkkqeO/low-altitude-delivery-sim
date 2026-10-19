@@ -1,0 +1,62 @@
+[
+  {
+    "altitude": 30,
+    "drone_count": 3,
+    "route_segments_checked": 5268,
+    "jobs_checked": 1350,
+    "active_rectangle_obstacles": 22,
+    "independent_conflicts": 0,
+    "calendar_and_drone_overlaps": 0,
+    "frozen_layout_and_same_orders": true
+  },
+  {
+    "altitude": 30,
+    "drone_count": 5,
+    "route_segments_checked": 5268,
+    "jobs_checked": 1350,
+    "active_rectangle_obstacles": 22,
+    "independent_conflicts": 0,
+    "calendar_and_drone_overlaps": 0,
+    "frozen_layout_and_same_orders": true
+  },
+  {
+    "altitude": 30,
+    "drone_count": 8,
+    "route_segments_checked": 5268,
+    "jobs_checked": 1350,
+    "active_rectangle_obstacles": 22,
+    "independent_conflicts": 0,
+    "calendar_and_drone_overlaps": 0,
+    "frozen_layout_and_same_orders": true
+  },
+  {
+    "altitude": 45,
+    "drone_count": 3,
+    "route_segments_checked": 3664,
+    "jobs_checked": 1350,
+    "active_rectangle_obstacles": 0,
+    "independent_conflicts": 0,
+    "calendar_and_drone_overlaps": 0,
+    "frozen_layout_and_same_orders": true
+  },
+  {
+    "altitude": 45,
+    "drone_count": 5,
+    "route_segments_checked": 3664,
+    "jobs_checked": 1350,
+    "active_rectangle_obstacles": 0,
+    "independent_conflicts": 0,
+    "calendar_and_drone_overlaps": 0,
+    "frozen_layout_and_same_orders": true
+  },
+  {
+    "altitude": 45,
+    "drone_count": 8,
+    "route_segments_checked": 3664,
+    "jobs_checked": 1350,
+    "active_rectangle_obstacles": 0,
+    "independent_conflicts": 0,
+    "calendar_and_drone_overlaps": 0,
+    "frozen_layout_and_same_orders": true
+  }
+]

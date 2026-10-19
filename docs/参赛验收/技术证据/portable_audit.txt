@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "file_count": 88,
+  "layouts": 28,
+  "plan_runs": 30,
+  "completed_jobs": 1350,
+  "trajectory_segments": 62567,
+  "overlapping_segment_pairs_checked": 136751,
+  "minimum_independently_reconstructed_distance_m": 20.0,
+  "source_and_scene_hashes_match": true,
+  "summary_mean_sample_std_valid_counts_match": true,
+  "limit": "Fixed-height ideal piecewise linear model only; no real flight validation."
+}

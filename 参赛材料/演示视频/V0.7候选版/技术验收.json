@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-18T22:19:47.142971+08:00",
+  "file": "低空配送仿真_V0.7候选演示.mp4",
+  "bytes": 23970112,
+  "duration": 252.78151,
+  "sha256": "200595427f2f01d1646a1d9b99386080c96857758554c5951f917a093e4acacd",
+  "full_decode": "passed",
+  "current_segment_durations": [
+    10.839002267573697,
+    12.643083900226758,
+    13.044716553287982
+  ],
+  "narration": [
+    "当前版本支持一到二十架无人机。三个设计种子比较正常和高峰，五个独立种子检验冻结后的布局。",
+    "这里是同条件三方案结果。高峰距离优先为七百三十一秒，运行优选为七百七十八秒。运行优选并非总是更好。",
+    "选中高峰方案，回放已保存的任务。后续展示地图与间距模块，其中综合风险属于旧入口，与当前位置优选分别验证。"
+  ],
+  "voice": "Windows SAPI Microsoft Huihui; synthetic voice",
+  "source": "参赛材料\\演示视频\\04_成片输出\\精简实操版\\低空配送仿真_精简实操版_转场优化版.mp4",
+  "source_sha256": "6774716c97ae4a570724a3d561ce93dbab746b514de2ab5d9c28d8947fdabb07",
+  "source_footage_seconds": 216.233333,
+  "capture_record": {
+    "study_sha256": "c9696ea0dfde409962ea8d464c4541fba31b3aafb6a66911b2f16a8a899db141",
+    "manifest_sha256": "128f0ea3ca6ca75b1b033b389557a68ec76d82603623ac025e7f3c8a5c6e9592",
+    "ui_errors": [],
+    "capture": "Actual Tk windows, automated actions; saved evaluation seed replay; simulation time 0 to 223.5 seconds"
+  },
+  "note": "UI captures and source footage are real application output. Historical selection label overlaid throughout legacy segment. No real flight."
+}

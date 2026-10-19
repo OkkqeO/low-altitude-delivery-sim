@@ -1,0 +1,52 @@
+{
+  "automatic": {
+    "buildings": 6,
+    "pads": 0,
+    "deliveries": 0,
+    "metadata": {
+      "scale_confirmed": false,
+      "method": "本地多类颜色分割与多边形轮廓提取",
+      "recognition_profile": "generic",
+      "recognition_mode": "semantic",
+      "recognition_count": 6,
+      "feature_counts": {
+        "road": 1,
+        "water": 0,
+        "green": 0,
+        "sports": 0,
+        "paved": 0
+      },
+      "recognition_truncated": false,
+      "analysis_pixels": [
+        628,
+        822
+      ],
+      "min_component_pixels": 100,
+      "ocr_engine": "not_requested",
+      "ocr_label_count": 0,
+      "named_candidate_count": 0,
+      "recognition_note": "飞行简图：建筑矩形与道路；楼高和尺度待核实，计算后仅显示会阻挡巡航的建筑。",
+      "detected_feature_counts": {
+        "road": 1,
+        "water": 2,
+        "green": 0,
+        "sports": 0,
+        "paved": 0
+      }
+    }
+  },
+  "color_selection": {
+    "buildings": 16,
+    "metadata": {
+      "recognition_mode": "color",
+      "min_component_pixels": 120,
+      "recognition_count": 16,
+      "recognition_truncated": false
+    }
+  },
+  "manual_review": {
+    "visible_groups": 16,
+    "rectangle_parts": 22
+  },
+  "note": "低对比建筑漏检；蓝色定位标记误分为水体。手描几何用于本案例，自动识别器未针对截图硬编码。"
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "Startup: main/editor/SVG show the same 10 footprints; 4 obstacles; cancel preserves result",
+    "Apply without edits preserves footprints, routes, plans and simulation statistics",
+    "Editor inherits main-view names, crowd-region and road layer switches",
+    "Selecting/drawing a hidden crowd region reveals its layer without modifying scene data",
+    "Edit/cancel leaves scene unchanged; edit/apply updates position and height in both views",
+    "25m/120m: all 10 footprints remain visible while height-based routing obstacles change",
+    "Excel import: editor uses the loaded in-memory snapshot",
+    "Site result replay: main/editor share the replay scene",
+    "Image: schematic editor initially hides source background; toggle and original draft retain it"
+  ],
+  "tk_callback_errors": []
+}

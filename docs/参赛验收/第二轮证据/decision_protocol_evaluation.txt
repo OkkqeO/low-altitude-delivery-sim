@@ -1,0 +1,124 @@
+demo_5: design replay 1/28 layouts
+demo_5: design replay 2/28 layouts
+demo_5: design replay 3/28 layouts
+demo_5: design replay 4/28 layouts
+demo_5: design replay 5/28 layouts
+demo_5: design replay 6/28 layouts
+demo_5: design replay 7/28 layouts
+demo_5: design replay 8/28 layouts
+demo_5: design replay 9/28 layouts
+demo_5: design replay 10/28 layouts
+demo_5: design replay 11/28 layouts
+demo_5: design replay 12/28 layouts
+demo_5: design replay 13/28 layouts
+demo_5: design replay 14/28 layouts
+demo_5: design replay 15/28 layouts
+demo_5: design replay 16/28 layouts
+demo_5: design replay 17/28 layouts
+demo_5: design replay 18/28 layouts
+demo_5: design replay 19/28 layouts
+demo_5: design replay 20/28 layouts
+demo_5: design replay 21/28 layouts
+demo_5: design replay 22/28 layouts
+demo_5: design replay 23/28 layouts
+demo_5: design replay 24/28 layouts
+demo_5: design replay 25/28 layouts
+demo_5: design replay 26/28 layouts
+demo_5: design replay 27/28 layouts
+demo_5: design replay 28/28 layouts
+demo_5: 20261040/normal, new frozen evaluation and independent audit passed
+demo_5: 20261040/peak, new frozen evaluation and independent audit passed
+demo_5: 20261041/normal, new frozen evaluation and independent audit passed
+demo_5: 20261041/peak, new frozen evaluation and independent audit passed
+demo_5: 20261042/normal, new frozen evaluation and independent audit passed
+demo_5: 20261042/peak, new frozen evaluation and independent audit passed
+demo_5: 20261043/normal, new frozen evaluation and independent audit passed
+demo_5: 20261043/peak, new frozen evaluation and independent audit passed
+demo_5: 20261044/normal, new frozen evaluation and independent audit passed
+demo_5: 20261044/peak, new frozen evaluation and independent audit passed
+demo_5: 20261045/normal, new frozen evaluation and independent audit passed
+demo_5: 20261045/peak, new frozen evaluation and independent audit passed
+demo_5: 20261046/normal, new frozen evaluation and independent audit passed
+demo_5: 20261046/peak, new frozen evaluation and independent audit passed
+demo_5: 20261047/normal, new frozen evaluation and independent audit passed
+demo_5: 20261047/peak, new frozen evaluation and independent audit passed
+demo_5: 20261048/normal, new frozen evaluation and independent audit passed
+demo_5: 20261048/peak, new frozen evaluation and independent audit passed
+demo_5: 20261049/normal, new frozen evaluation and independent audit passed
+demo_5: 20261049/peak, new frozen evaluation and independent audit passed
+demo_5: 20261050/normal, new frozen evaluation and independent audit passed
+demo_5: 20261050/peak, new frozen evaluation and independent audit passed
+demo_5: 20261051/normal, new frozen evaluation and independent audit passed
+demo_5: 20261051/peak, new frozen evaluation and independent audit passed
+demo_5: 20261052/normal, new frozen evaluation and independent audit passed
+demo_5: 20261052/peak, new frozen evaluation and independent audit passed
+demo_5: 20261053/normal, new frozen evaluation and independent audit passed
+demo_5: 20261053/peak, new frozen evaluation and independent audit passed
+demo_5: 20261054/normal, new frozen evaluation and independent audit passed
+demo_5: 20261054/peak, new frozen evaluation and independent audit passed
+demo_5: 20261055/normal, new frozen evaluation and independent audit passed
+demo_5: 20261055/peak, new frozen evaluation and independent audit passed
+demo_5: 20261056/normal, new frozen evaluation and independent audit passed
+demo_5: 20261056/peak, new frozen evaluation and independent audit passed
+demo_5: 20261057/normal, new frozen evaluation and independent audit passed
+demo_5: 20261057/peak, new frozen evaluation and independent audit passed
+demo_5: 20261058/normal, new frozen evaluation and independent audit passed
+demo_5: 20261058/peak, new frozen evaluation and independent audit passed
+demo_5: 20261059/normal, new frozen evaluation and independent audit passed
+demo_5: 20261059/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: design replay 1/15 layouts
+user_map_h30_d5: design replay 2/15 layouts
+user_map_h30_d5: design replay 3/15 layouts
+user_map_h30_d5: design replay 4/15 layouts
+user_map_h30_d5: design replay 5/15 layouts
+user_map_h30_d5: design replay 6/15 layouts
+user_map_h30_d5: design replay 7/15 layouts
+user_map_h30_d5: design replay 8/15 layouts
+user_map_h30_d5: design replay 9/15 layouts
+user_map_h30_d5: design replay 10/15 layouts
+user_map_h30_d5: design replay 11/15 layouts
+user_map_h30_d5: design replay 12/15 layouts
+user_map_h30_d5: design replay 13/15 layouts
+user_map_h30_d5: design replay 14/15 layouts
+user_map_h30_d5: design replay 15/15 layouts
+user_map_h30_d5: 20261040/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261040/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261041/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261041/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261042/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261042/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261043/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261043/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261044/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261044/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261045/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261045/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261046/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261046/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261047/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261047/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261048/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261048/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261049/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261049/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261050/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261050/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261051/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261051/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261052/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261052/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261053/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261053/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261054/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261054/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261055/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261055/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261056/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261056/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261057/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261057/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261058/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261058/peak, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261059/normal, new frozen evaluation and independent audit passed
+user_map_h30_d5: 20261059/peak, new frozen evaluation and independent audit passed
+Saved C:\Users\20115\Desktop\操作系统原理\低空配送仿真Python版\results\decision_v07_round2: 240 plan runs, 10800 repeated task records

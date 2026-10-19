@@ -1,0 +1,23 @@
+{
+  "checked_at_beijing": "2026-10-19T00:50:27.152975+08:00",
+  "reviewer": "独立评委，未调用团队诊断审计器或生产间距检测器；几何复用上轮评委自有独立实现",
+  "status": "passed",
+  "protocol_sha256": "785370a0da8e021195d61b99c5320aa7189b35600a941af89dfe3ecfbe5fae9f",
+  "research_manifest_sha256": "e1c7f0913b9e67b529b469906a0a35deb2f8c776a733914d68a66a11a7de99c9",
+  "all_21_output_hashes_and_inventory_match": true,
+  "all_9_frozen_core_rule_hashes_match": true,
+  "previous_source_and_20_seed_counterexample_hashes_unchanged": true,
+  "plan_runs": 240,
+  "task_records": 10800,
+  "trajectory_segments": 1120502,
+  "positive_overlap_segment_pairs": 1692879,
+  "minimum_independent_positive_overlap_distance_m": 20.0,
+  "job_metrics_and_gaussian_route_exposure_independently_recomputed": true,
+  "resources_and_continuous_positive_overlap_geometry_passed": true,
+  "pair_rows_independently_recomputed": 160,
+  "difference_statistics_rows_independently_recomputed": 32,
+  "design_stats_replayed": 258,
+  "candidate_subset_scores_and_exact_ranks_recomputed": 172,
+  "full_and_leave_one_out_selections_recomputed": 8,
+  "limits": "同一Windows/Python3.12；两张旧地图的新模拟订单，非真实飞行/新地图外验；仍排除零时长交接和地面阶段；不证明新优选算法收益或国奖门槛达成。"
+}

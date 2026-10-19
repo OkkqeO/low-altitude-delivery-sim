@@ -19,7 +19,8 @@ COLORS = {"buildings": "#597594", "pads": "#2878CA", "deliveries": "#E09B32", "r
 
 
 class MapEditor:
-    def __init__(self, parent, scene, config=None, path=None):
+    def __init__(self, parent, scene, config=None, path=None, *, view=None):
+        view = view or {}
         self.document = MapDocument(scene)
         self.config = config
         self.path = Path(path) if path else None
@@ -48,9 +49,13 @@ class MapEditor:
         self.window.rowconfigure(2, weight=1)
         self.window.columnconfigure(0, weight=1)
         self.tool = tk.StringVar(self.window, "select")
-        self.show_background = tk.BooleanVar(self.window, True)
-        self.show_labels = tk.BooleanVar(self.window, len(scene.get("buildings", [])) < 40)
-        self.layers = {k: tk.BooleanVar(self.window, True) for k in ("buildings", *FEATURE_TYPES)}
+        # Reopening a flight diagram starts with the same plain basemap.
+        # Image drafts still show their source image for tracing/calibration.
+        draft = (scene.get("image_import", {}).get("scale_confirmed") is False
+                 or any(b.get("height_confirmed") is False for b in scene.get("buildings", [])))
+        self.show_background = tk.BooleanVar(self.window, view.get("background", draft or scene.get("map_presentation") != "schematic"))
+        self.show_labels = tk.BooleanVar(self.window, view.get("labels", len(scene.get("buildings", [])) < 40))
+        self.layers = {k: tk.BooleanVar(self.window, view.get(k, True)) for k in ("buildings", "risk_zones", *FEATURE_TYPES)}
         self.feature_kind = tk.StringVar(self.window, "绿地")
         self.status = tk.StringVar(self.window)
         self.mode = tk.StringVar(self.window, "自动")
@@ -112,7 +117,7 @@ class MapEditor:
         ttk.Label(recognition, textvariable=self.color_text, foreground=MUTED).pack(side="left", padx=px(10))
         layers = ttk.Frame(tools)
         layers.grid(row=2, column=0, sticky="w", pady=px((7, 0)))
-        for key, label in (("buildings", "建筑"), *FEATURE_TYPES.items()):
+        for key, label in (("buildings", "建筑"), ("risk_zones", "人群区"), *FEATURE_TYPES.items()):
             ttk.Checkbutton(layers, text=label, variable=self.layers[key], command=self.draw).pack(side="left", padx=px((0, 5)))
         ttk.Checkbutton(layers, text="名称", variable=self.show_labels, command=self.draw).pack(side="left")
         ttk.Label(layers, text="  新地物").pack(side="left")
@@ -331,6 +336,12 @@ class MapEditor:
                 messagebox.showerror("属性未应用", str(error), parent=self.window)
                 return False
             self.selected = reference
+            if reference:
+                collection, identity = reference
+                item = next(i for i in self.document.scene[collection] if i["id"] == identity)
+                key = item["kind"] if collection == "map_features" else collection
+                if key in self.layers:
+                    self.layers[key].set(True)
             self.refresh()
         if switch_tab:
             self.tabs.select(self.property_tab)
@@ -352,6 +363,8 @@ class MapEditor:
 
     def set_tool(self, tool):
         self.tool.set(tool)
+        if tool in self.layers:
+            self.layers[tool].set(True)
         self.drag = None
         self.calibration_points = []
         self.canvas.configure(cursor="arrow" if tool == "select" else "crosshair")

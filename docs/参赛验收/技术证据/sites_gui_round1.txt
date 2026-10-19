@@ -1,0 +1,1 @@
+Sites GUI passed: fleet inherited from main, 1/3/8/20 actual drones, recalculation and dirty state, no cost/grade inputs, six results, replay and playback, both exports, JSON reload, ordinary Excel template, small window, cancel, legacy recalculation.

@@ -1,0 +1,25 @@
+{
+  "report_title": "面向园区末端配送的低空风险仿真与起降场选址系统",
+  "reference_sha256": "552e5c9ebe6d0054f395eefef5c1b33a72f825ba16ea40adfae96b3468d78929",
+  "input_files": {
+    "data\\demo_scene.json": "f7334c3edcadbc67587a8af390037d428c0b4b93d65e7262d9bff3ffb4201e38",
+    "results\\safety\\raw_metrics.csv": "4f3f5b1cdfb0a7f3777f3b1fa0c977621e76e9e1524163097949b0e83574e2b4",
+    "results\\safety\\summary.csv": "8fbbd3db56106c0a6f945e3ee17a3d2b6690134940654661f31832a933e70b52"
+  },
+  "tests": {
+    "status": "see current verification logs",
+    "historical_count": 41,
+    "historical_date": "2026-10-17"
+  },
+  "raw_rows": 90,
+  "paired_rows": 45,
+  "baseline_conflicts": 700.0,
+  "staggered_conflicts": 0.0,
+  "information_form_character_counts": {
+    "description": 205,
+    "innovation": 133,
+    "value": 111
+  },
+  "font": "仿宋 12pt",
+  "render": "Microsoft Word 16 COM + bundled Poppler"
+}

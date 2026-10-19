@@ -1,0 +1,17 @@
+{
+  "capture": "Actual Tk export button invoked; saved V0.7 evaluation, no selected row",
+  "automation": "Directory chooser return value supplied programmatically; actual product export ran",
+  "source": "results/user_map_300m/studies/h30_d5.json.gz",
+  "source_sha256": "4160c915e0069cb85ade34cfd2873ad64115d9ab08558f936895fb2626fe5446",
+  "source_unchanged": true,
+  "saved_study_equal": true,
+  "minimum_on_time_rate": 0.9,
+  "status": "已导出原始研究、基线差、四指标诊断和研究目标：C:\\Users\\20115\\Desktop\\操作系统原理\\低空配送仿真Python版\\.verification\\competition_20261019\\video\\exported_study",
+  "ui_errors": [],
+  "diagnostics": {
+    "decision_diagnostics.json": "8ea05d2446e49fb361f4a62491033d123693860228f6c8d0c091f2d7214f0fc8",
+    "decision_comparisons.csv": "9998b013ecf30c6e9a3a934536f2e8a93152137544922db9d0d5c838c9d3b8a1",
+    "decision_diagnostics.md": "42245e061b6881e90e544a9731dcb746fb746f5dd3321950607ec4981c91d5f4"
+  },
+  "exported_files": 91
+}

@@ -1,0 +1,223 @@
+{
+  "protocol_version": "1.0",
+  "frozen_at_beijing": "2026-10-19T00:16:53.132355+08:00",
+  "state": "事前冻结；仅在本文件落盘后开始新增种子评价",
+  "objective": "验证评价后决策诊断的可审计性、服务门槛与四指标帕累托，不优化核心模型或选择布局",
+  "minimum_on_time_rate": 0.9,
+  "threshold_basis": "团队可调研究目标；非赛事/法规；按每场景跨运行等权平均准时率，不保证每种子达标",
+  "four_pareto_metrics": {
+    "failure_rate": "lower",
+    "on_time_rate": "higher",
+    "mean_delivery": "lower",
+    "mean_exposure": "lower"
+  },
+  "failure_rate_definition": "逐运行failed_orders/total_orders，然后运行等权；不使用汇总计数比值",
+  "diagnostic_tolerance": 1e-08,
+  "original_design_decision": "保持原精确浮点词典序，同时报告first_difference_layer与跳过1e-8内差异的first_substantive_difference_layer；不重新排序原候选",
+  "missing_value_rule": "缺失、NaN、Infinity、bool或缺少评价种子均待验证；不零填；任一方案四指标不全则场景帕累托整体待验证",
+  "no_automatic_winner": "三方案均未达标即不推荐；有达标方案仅列候选与取舍，不自动优选",
+  "sample_separation": "新20261040—59不与旧20261015—39混算；不根据新增结果调参或重选布局",
+  "cases": {
+    "demo_5": {
+      "source_study": "results/sites_v1/study.json",
+      "source_study_sha256": "c9696ea0dfde409962ea8d464c4541fba31b3aafb6a66911b2f16a8a899db141",
+      "base_config": {
+        "scenario": "normal",
+        "order_count": 30,
+        "altitude": 45,
+        "risk_weight": 2,
+        "seed": 20261015,
+        "drone_count": 5,
+        "speed": 9,
+        "takeoff_service": 25,
+        "landing_service": 20,
+        "delivery_service": 20,
+        "deadline": 600,
+        "deconflict": true,
+        "separation": 20,
+        "departure_step": 5,
+        "max_airspace_delay": 600
+      },
+      "design_seeds": [
+        20365744,
+        20470473,
+        20575202
+      ],
+      "choices": {
+        "fixed": {
+          "pad_ids": [
+            "S1",
+            "S5"
+          ],
+          "fleet_allocation": {
+            "S1": 3,
+            "S5": 2
+          }
+        },
+        "distance": {
+          "pad_ids": [
+            "S3",
+            "S7"
+          ],
+          "fleet_allocation": {
+            "S3": 3,
+            "S7": 2
+          }
+        },
+        "combined": {
+          "pad_ids": [
+            "S6",
+            "S8"
+          ],
+          "fleet_allocation": {
+            "S6": 3,
+            "S8": 2
+          }
+        }
+      },
+      "scenarios": [
+        "normal",
+        "peak"
+      ],
+      "new_evaluation_seeds": [
+        20261040,
+        20261041,
+        20261042,
+        20261043,
+        20261044,
+        20261045,
+        20261046,
+        20261047,
+        20261048,
+        20261049,
+        20261050,
+        20261051,
+        20261052,
+        20261053,
+        20261054,
+        20261055,
+        20261056,
+        20261057,
+        20261058,
+        20261059
+      ]
+    },
+    "user_map_h30_d5": {
+      "source_study": "results/user_map_300m/studies/h30_d5.json.gz",
+      "source_study_sha256": "4160c915e0069cb85ade34cfd2873ad64115d9ab08558f936895fb2626fe5446",
+      "base_config": {
+        "scenario": "normal",
+        "order_count": 30,
+        "altitude": 30,
+        "risk_weight": 2,
+        "seed": 20261015,
+        "drone_count": 5,
+        "speed": 9,
+        "takeoff_service": 25,
+        "landing_service": 20,
+        "delivery_service": 20,
+        "deadline": 600,
+        "deconflict": true,
+        "separation": 20,
+        "departure_step": 5,
+        "max_airspace_delay": 600
+      },
+      "design_seeds": [
+        20365744,
+        20470473,
+        20575202
+      ],
+      "choices": {
+        "fixed": {
+          "pad_ids": [
+            "S1",
+            "S5"
+          ],
+          "fleet_allocation": {
+            "S1": 3,
+            "S5": 2
+          }
+        },
+        "distance": {
+          "pad_ids": [
+            "S1",
+            "S4"
+          ],
+          "fleet_allocation": {
+            "S1": 3,
+            "S4": 2
+          }
+        },
+        "combined": {
+          "pad_ids": [
+            "S5",
+            "S6"
+          ],
+          "fleet_allocation": {
+            "S5": 3,
+            "S6": 2
+          }
+        }
+      },
+      "scenarios": [
+        "normal",
+        "peak"
+      ],
+      "new_evaluation_seeds": [
+        20261040,
+        20261041,
+        20261042,
+        20261043,
+        20261044,
+        20261045,
+        20261046,
+        20261047,
+        20261048,
+        20261049,
+        20261050,
+        20261051,
+        20261052,
+        20261053,
+        20261054,
+        20261055,
+        20261056,
+        20261057,
+        20261058,
+        20261059
+      ]
+    }
+  },
+  "expected_new_plan_runs": 240,
+  "expected_new_task_records_including_repeats": 10800,
+  "design_stability": {
+    "candidate_layouts": 43,
+    "design_seeds_per_map": 3,
+    "scenarios": [
+      "normal",
+      "peak"
+    ],
+    "expected_layout_runs": 258,
+    "subsets": "全3种子及逐次留出1种子的3个子集；保存全部候选原目标得分/排序",
+    "decision": "保持原精确float排序；仅分析设计样本敏感性，不更新choice，不作为独立提升证据"
+  },
+  "core_source_sha256": {
+    "engine.py": "565121e6878cff34ca95f261aa3112b7a504229e35613299a43414ae30ab0ca6",
+    "site_selection.py": "95cfdf81b4bcebbdee6428d3d36128bdab9605821904f212cc55a0a34dd8055a",
+    "facility.py": "f8473759f62aadf6e4ae9619681045da159be3676d5d7be46639d03ad1f4f34e",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609",
+    "reporting.py": "2c06a7a99d504b9f7aa6124b8f7c4dac808f18d5874e4628a741a7a54493e9ad"
+  },
+  "rule_source_sha256": {
+    "decision_support.py": "00cb625268234ad939cbe0071e6838b4a67e81302469ce9680e743d22ef24d68",
+    "cases/run_decision_validation.py": "b20a705a43bdebc412546033cf1f630980ef6266761aafe642fd5a08f7fa87a7",
+    "cases/verify_continuous_model.py": "7343629559a2e7e11487f06bb8e5216a534a3c588e4ef8d958538e1ac41205b5",
+    "tests/test_decision_support.py": "cf729d85e1ac656006967baebfab92e090c23327e007f60a8b7076f32ff5deab"
+  },
+  "independent_checks": [
+    "逐任务指标重算",
+    "不调用生产检测器的连续轨迹与资源检查",
+    "独立重算门槛、四指标支配关系与配对差值",
+    "源研究/布局/规则与协议哈希冻结"
+  ],
+  "limitations": "两张既有地图的新随机订单检验；不是新场地、实测运营或真实飞行验证；90%不代表官方通过线"
+}

@@ -1,0 +1,1 @@
+Frozen before evaluation: C:\Users\20115\Desktop\操作系统原理\低空配送仿真Python版\docs\参赛验收\第二轮实验协议.json; SHA256=785370a0da8e021195d61b99c5320aa7189b35600a941af89dfe3ecfbe5fae9f

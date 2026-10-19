@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-10-19T01:10:58.979196+08:00",
+  "label": "V0.7第二轮诊断增强候选材料；未完成本人信息与手写签字",
+  "deliverables": [
+    {
+      "path": "参赛材料/主报告/主报告_面向园区末端配送的低空风险仿真与起降场选址系统.md",
+      "bytes": 53921,
+      "sha256": "8cd219bb18401f7abfc87cb858be864f2f1e6d876d9f1ce48aeaf5235171dab2"
+    },
+    {
+      "path": "参赛材料/主报告/主报告_面向园区末端配送的低空风险仿真与起降场选址系统.docx",
+      "bytes": 1203750,
+      "sha256": "76ea5875b7719a1532384f784cb21339f5b3016314d037170415e88db5dba8a9"
+    },
+    {
+      "path": "参赛材料/主报告/主报告_面向园区末端配送的低空风险仿真与起降场选址系统.pdf",
+      "bytes": 1374164,
+      "sha256": "2a8a6d2b6ed4d9640b0dae7f58fb31f5c6398c7687522ad8c796c35bfdb3bfcb",
+      "pages": 32
+    },
+    {
+      "path": "参赛材料/独立表单/作品信息表.md",
+      "bytes": 2006,
+      "sha256": "8fb27e635ab9b131c3584652ec4485615bbbca1e239faf6e8347825ade7d5c29"
+    },
+    {
+      "path": "参赛材料/独立表单/作品信息表.docx",
+      "bytes": 1170978,
+      "sha256": "309cfca6af10e6c01da47800a5a9d3a7edfb8cbfcd9f623841165b50734d2e5a"
+    },
+    {
+      "path": "参赛材料/独立表单/作品信息表.pdf",
+      "bytes": 145819,
+      "sha256": "97858f2e00fea4fbfcf59edc06933151b8619b7666acd6b19b3108b11d34f1e8",
+      "pages": 2
+    },
+    {
+      "path": "参赛材料/独立表单/诚信承诺书.md",
+      "bytes": 1410,
+      "sha256": "229d345dff70bd3372f2081fc30871b28042313cf5e68f974e93d522210bdf6f"
+    },
+    {
+      "path": "参赛材料/独立表单/诚信承诺书.docx",
+      "bytes": 1169330,
+      "sha256": "b93e5789c12ffe89dc8b81a02b8e4e3e435977519131a2f179fa9cd7cc98dcf2"
+    },
+    {
+      "path": "参赛材料/独立表单/诚信承诺书.pdf",
+      "bytes": 102593,
+      "sha256": "24149bf0d2074e0f34a75223a5a61770b18ee2a5c5f4cc471dc495d5639f943b",
+      "pages": 1
+    },
+    {
+      "path": "参赛材料/答辩PPT/园区低空配送_答辩PPT_V0.7候选版.pptx",
+      "bytes": 759303,
+      "sha256": "448efbc45db2cdf81ec1587cbb8954f81284333cd685fdb7ecb1fe388b048600"
+    },
+    {
+      "path": "参赛材料/答辩PPT/园区低空配送_答辩PPT_V0.7候选版.pdf",
+      "bytes": 1381920,
+      "sha256": "6c2d06f13c4450625d6f8090d8b42677039d71a4293e198841ce5b40e116967d",
+      "pages": 11
+    },
+    {
+      "path": "参赛材料/答辩PPT/五分钟讲稿与问答.md",
+      "bytes": 8374,
+      "sha256": "a5548afb80787a6112b086ad7ed727876c06cd5b1c4dbda00eca543ddb7e13bb"
+    },
+    {
+      "path": "参赛材料/答辩PPT/V0.7候选版阅读说明.md",
+      "bytes": 1068,
+      "sha256": "885c8ac6165cd8e1e180859b12ad1ab5bea2f0570970c77253ad9ce949a4abb2"
+    }
+  ],
+  "sources": [
+    {
+      "path": "tools/materials/build_report.py",
+      "bytes": 83008,
+      "sha256": "e7ff85b40ba26ea2b5552c4d50aba655b76c983fd3e83c0f309c11d6b41aba89"
+    },
+    {
+      "path": "tools/materials/diagnosis_materials.py",
+      "bytes": 16830,
+      "sha256": "417745d6994fc8edda039c1ed1f4f93591934b767322da545caa5e96ebb69ef1"
+    },
+    {
+      "path": "tools/materials/build_script.py",
+      "bytes": 10491,
+      "sha256": "d89fcd6e9dac7e730bf228db85d565356ccebebc1d0cd257579a5d6b9973a522"
+    },
+    {
+      "path": "tools/materials/build_defense.mjs",
+      "bytes": 17284,
+      "sha256": "5e31aa621b7135c2d2dcc516da83174b86a8603af4f0149ffcfea77801941cd3"
+    },
+    {
+      "path": "tools/materials/export_documents.ps1",
+      "bytes": 2247,
+      "sha256": "c2d56359bf0e44fc99790fc03ae7998b430ff660b00acbcca739439e327bd7ed"
+    },
+    {
+      "path": "tools/materials/README.md",
+      "bytes": 4022,
+      "sha256": "9ea525b479fdabe34c782a745059a0bf5f6428500f273bba59bf57d5970a20ba"
+    }
+  ],
+  "report_visual_review": {
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "reviewed": true,
+    "no_visible_clipping": true,
+    "toc_checked": true,
+    "render_dpi": 95
+  },
+  "forms_visual_review": {
+    "information_pages": 2,
+    "commitment_pages": 1,
+    "reviewed": true,
+    "unsigned": true
+  },
+  "deck_visual_review": {
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "reviewed": true,
+    "latest_changed_pages": [
+      1,
+      5,
+      10
+    ],
+    "roundtrip_pixel_identical_pages": 11,
+    "native_editable_tables_on_slides": [
+      6,
+      7
+    ],
+    "native_powerpoint_tested": false
+  },
+  "script_budget_seconds": 285,
+  "switch_buffer_seconds": 15,
+  "human_rehearsal_completed": false,
+  "python_ast_parse_passed": [
+    "tools/materials/build_report.py",
+    "tools/materials/diagnosis_materials.py",
+    "tools/materials/build_script.py",
+    "tools/materials/merge_signed_commitment.py"
+  ],
+  "video_index": {
+    "path": "参赛材料/演示视频/V0.7第二轮/低空配送仿真_V0.7第二轮演示.mp4",
+    "duration_seconds": 201.952583,
+    "bytes": 9841796,
+    "sha256": "082929d3b877fb3f8579208d909d09990af37e55171928f989800bec06180e86",
+    "verification_owner": "项目负责人及独立评委；此处仅索引，不声称材料团队重新解码"
+  }
+}

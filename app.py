@@ -87,8 +87,7 @@ class Application:
             scale, ox, oy = self.transform
             point = (event.x-ox)/scale, (event.y-oy)/scale
             scene = self.result["scene"]
-            from flight_map import flight_obstacles
-            building = next((b for b in reversed(flight_obstacles(scene)) if contains(b, point)), None)
+            building = next((b for b in reversed(scene["buildings"]) if contains(b, point)), None)
             if building:
                 blocked = building["height"]+scene["vertical_clearance"] >= scene["altitude"]
                 detail = f"{building['name']} · {building['height']:g}米 · "+("需绕行" if blocked else "可从上方通过")
@@ -238,7 +237,10 @@ class Application:
                 raise ValueError("评价种子不能与设计种子相同")
             from map_editor import MapEditor
             source=scene if scene is not None else self.scene_data if self.scene_data is not None else create_scene(config,self.scene_path)
-            editor=MapEditor(self.root,source,config,path if path else self.scene_path)
+            editor=MapEditor(self.root,source,config,path if path else self.scene_path,
+                             view={"background": self.background_layer.get() if scene is None else True,
+                                   "labels": self.show_building_names.get(),
+                                   "risk_zones": self.risk_layer.get(), "road": self.feature_layer.get()})
             result=editor.show()
             if result is not None:
                 self._calculate(config,result,editor.saved_path or (Path(path) if path else self.scene_path),importing=True)
@@ -372,7 +374,7 @@ class Application:
         name=Path(self.scene_path).name if self.scene_path else scene.get("name","演示园区")
         self.map_title.set(name if len(name)<=28 else name[:25]+"…")
         from flight_map import flight_obstacles
-        self.map_meta.set(f"{scene['width']:g} × {scene['height']:g} 米   /   {len(flight_obstacles(scene))} 处飞行障碍   /   "
+        self.map_meta.set(f"{scene['width']:g} × {scene['height']:g} 米   /   {len(scene['buildings'])} 栋建筑 · {len(flight_obstacles(scene))} 处障碍   /   "
                           f"{len(scene['pads'])} 个候选场站   /   {len(scene['deliveries'])} 个配送点")
         self.source_text.set("数据来源："+scene['source'][:54])
         self.map_text.set(f"当前地图：{name}　{scene['width']:g}×{scene['height']:g}米　"

@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-10-19T00:53:01.129144+08:00",
+  "bytes": 9841796,
+  "duration": 201.952583,
+  "sha256": "082929d3b877fb3f8579208d909d09990af37e55171928f989800bec06180e86",
+  "full_decode": "passed",
+  "current_segment_durations": [
+    23.086712018140588,
+    24.940861678004534,
+    24.71061224489796,
+    27.534784580498865,
+    28.314648526077097,
+    28.295102040816328
+  ],
+  "narration": [
+    "这是本轮真实工作台。系统可以离线运行，支持图片、Excel和JSON地图，一到二十架无人机。三个位置方案没有默认选中。设计优选只是设计样本中的选择，原始数据中仍称运行优选。",
+    "默认园区正常场景，设计优选平均一百四十三点三五秒，距离优先一百二十三点七一秒。设计优选更慢，但路径暴露更低。四指标诊断显示取舍，不把非劣候选当作普遍最优。这些是原五个种子的评价均值。",
+    "再看截图地图原五种子高峰。设计优选准时率百分之四十六，固定位置百分之五十二点三三，设计优选还更慢、暴露更高，因此被基线支配。三方案均没有达到百分之九十研究目标，系统明确不推荐采用任何方案。",
+    "这里把研究目标从百分之九十改为四十，仅演示目标敏感性。仿真订单、布局和指标全部不变，设计优选仍然被支配。门槛改变不是性能提升，四十也不是运营承诺。用户需要主动选行才可以回放，导出会保留三个方案及诊断。",
+    "即使方案被支配，也允许查看原任务回放，追查具体订单。新增证据解释设计目标首先在哪一级决胜，检验设计种子敏感性，并冻结原布局追加新的二十个种子。它不重新选址，也不证明新优化收益。后面是明确标识的历史基础模块实操。",
+    "最后回到当前工作台，实际点击导出完整研究结果。无需选中某一方案，全部候选与原任务都会保留，并写出JSON、CSV和Markdown诊断，便于复核。这是固定高度的研究仿真，真实尺度、楼高和需求仍需核实，尚无真实飞行验证。"
+  ],
+  "captions": [
+    "V0.7 第二轮｜实际Tk工作台，主动选行，无默认推荐\n地图导入、1—20架；设计优选 = 原始数据“运行优选”",
+    "原5种子｜默认园区正常场景，比较时效与暴露取舍\n143.35秒 vs 123.71秒；暴露更低不代表全面最优",
+    "原5种子｜截图地图高峰：设计优选被基线支配\n三方案均未达90%研究目标；不是赛事标准或实测SLA",
+    "目标敏感性演示｜90%改40%仅重算诊断\n订单、布局和原始指标不变；不代表性能或安全改善",
+    "人工选中后回放已存任务，允许追查被支配方案\n设计留一与新20种子用于验证证据，不宣称新优化收益",
+    "实际导出完成｜原研究 + JSON / CSV / Markdown诊断\n保留全部候选与任务；固定高度研究仿真，尚无真实飞行验证"
+  ],
+  "segment_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    "labeled_legacy",
+    5
+  ],
+  "export_capture": {
+    "capture": "Actual Tk export button invoked; saved V0.7 evaluation, no selected row",
+    "automation": "Directory chooser return value supplied programmatically; actual product export ran",
+    "source": "results/user_map_300m/studies/h30_d5.json.gz",
+    "source_sha256": "4160c915e0069cb85ade34cfd2873ad64115d9ab08558f936895fb2626fe5446",
+    "source_unchanged": true,
+    "saved_study_equal": true,
+    "minimum_on_time_rate": 0.9,
+    "status": "已导出原始研究、基线差、四指标诊断和研究目标：C:\\Users\\20115\\Desktop\\操作系统原理\\低空配送仿真Python版\\.verification\\competition_20261019\\video\\exported_study",
+    "ui_errors": [],
+    "diagnostics": {
+      "decision_diagnostics.json": "8ea05d2446e49fb361f4a62491033d123693860228f6c8d0c091f2d7214f0fc8",
+      "decision_comparisons.csv": "9998b013ecf30c6e9a3a934536f2e8a93152137544922db9d0d5c838c9d3b8a1",
+      "decision_diagnostics.md": "42245e061b6881e90e544a9731dcb746fb746f5dd3321950607ec4981c91d5f4"
+    },
+    "exported_files": 91
+  },
+  "voice": "Windows SAPI Microsoft Huihui, synthetic voice",
+  "capture_record": {
+    "capture": "Actual Tk workbench; automated actions using saved, unmodified V0.7 evaluations",
+    "sources": {
+      "results\\sites_v1\\study.json": "c9696ea0dfde409962ea8d464c4541fba31b3aafb6a66911b2f16a8a899db141",
+      "results\\user_map_300m\\studies\\h30_d5.json.gz": "4160c915e0069cb85ade34cfd2873ad64115d9ab08558f936895fb2626fe5446"
+    },
+    "source_unchanged": true,
+    "ui_errors": [],
+    "default_selection": null,
+    "screenshots": [
+      "normal.png",
+      "adverse.png",
+      "target.png"
+    ],
+    "replay_frames": 80,
+    "replay_simulation_seconds": [
+      0,
+      118.5
+    ],
+    "goal_change": "90% to 40% changes diagnosis only, not simulation or layout",
+    "warning": "40% is an illustrative sensitivity target, not a validated operating SLA or a performance gain"
+  },
+  "legacy_source": "参赛材料\\演示视频\\V0.7候选版\\低空配送仿真_V0.7候选演示.mp4",
+  "legacy_source_sha256": "200595427f2f01d1646a1d9b99386080c96857758554c5951f917a093e4acacd",
+  "legacy_source_start": 37.52680272108844,
+  "legacy_seconds": 45,
+  "limits": "Real software screenshots and accelerated saved task replay; simulated data, no real flights. 40% target is diagnosis-only sensitivity, not an optimization gain or operating SLA."
+}

@@ -1,0 +1,5 @@
+{
+  "command": "python -X utf8 -S .verification/verify_sites_gui.py",
+  "finished": "2026-10-18T22:03:50.7613852+08:00",
+  "exit_code": 0
+}

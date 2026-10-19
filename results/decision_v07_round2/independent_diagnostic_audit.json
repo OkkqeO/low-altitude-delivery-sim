@@ -1,0 +1,96 @@
+[
+  {
+    "case": "demo_5",
+    "job_based_metric_gate_and_pareto_checks": "passed",
+    "scenario_means": {
+      "normal": {
+        "fixed": {
+          "failure_rate": 0.0,
+          "on_time_rate": 1.0,
+          "mean_delivery": 182.48738966951848,
+          "mean_exposure": 0.925192139591543
+        },
+        "distance": {
+          "failure_rate": 0.0,
+          "on_time_rate": 1.0,
+          "mean_delivery": 137.33722014510263,
+          "mean_exposure": 1.1530816916115962
+        },
+        "combined": {
+          "failure_rate": 0.0,
+          "on_time_rate": 1.0,
+          "mean_delivery": 168.10752096819766,
+          "mean_exposure": 0.8680502749112516
+        }
+      },
+      "peak": {
+        "fixed": {
+          "failure_rate": 0.0,
+          "on_time_rate": 0.3408333333333333,
+          "mean_delivery": 868.5717154084352,
+          "mean_exposure": 0.9596742134569718
+        },
+        "distance": {
+          "failure_rate": 0.0,
+          "on_time_rate": 0.41833333333333333,
+          "mean_delivery": 722.3976537806667,
+          "mean_exposure": 1.1871332901408091
+        },
+        "combined": {
+          "failure_rate": 0.0,
+          "on_time_rate": 0.3808333333333333,
+          "mean_delivery": 789.7888423289988,
+          "mean_exposure": 0.8653008233927122
+        }
+      }
+    },
+    "diagnostics_do_not_optimize": true
+  },
+  {
+    "case": "user_map_h30_d5",
+    "job_based_metric_gate_and_pareto_checks": "passed",
+    "scenario_means": {
+      "normal": {
+        "fixed": {
+          "failure_rate": 0.0,
+          "on_time_rate": 1.0,
+          "mean_delivery": 98.40595243299094,
+          "mean_exposure": 0.19648711236943525
+        },
+        "distance": {
+          "failure_rate": 0.0,
+          "on_time_rate": 1.0,
+          "mean_delivery": 95.72459715333314,
+          "mean_exposure": 0.15993632485414855
+        },
+        "combined": {
+          "failure_rate": 0.0,
+          "on_time_rate": 1.0,
+          "mean_delivery": 114.2800836376331,
+          "mean_exposure": 0.2621886908117651
+        }
+      },
+      "peak": {
+        "fixed": {
+          "failure_rate": 0.0,
+          "on_time_rate": 0.5141666666666667,
+          "mean_delivery": 583.9907381801704,
+          "mean_exposure": 0.20256796156126072
+        },
+        "distance": {
+          "failure_rate": 0.0,
+          "on_time_rate": 0.515,
+          "mean_delivery": 576.2903527252776,
+          "mean_exposure": 0.15985231562095778
+        },
+        "combined": {
+          "failure_rate": 0.0,
+          "on_time_rate": 0.4708333333333333,
+          "mean_delivery": 635.3081739351649,
+          "mean_exposure": 0.26450973005814205
+        }
+      }
+    },
+    "diagnostics_do_not_optimize": true
+  }
+]

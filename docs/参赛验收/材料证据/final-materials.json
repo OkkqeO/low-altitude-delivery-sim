@@ -1,0 +1,206 @@
+{
+  "date": "2026-10-18",
+  "scope": "项目材料组验证，非独立评审或官方验收",
+  "files": [
+    {
+      "path": "参赛材料/主报告/主报告_面向园区末端配送的低空风险仿真与起降场选址系统.docx",
+      "bytes": 1147695,
+      "sha256": "252972ff1aaa78504a4ea958c7e7444e4444898d68bfbe6aa4f18532966f3bdc"
+    },
+    {
+      "path": "参赛材料/主报告/主报告_面向园区末端配送的低空风险仿真与起降场选址系统.md",
+      "bytes": 48096,
+      "sha256": "3a0b93821c60927c2abd04163e08bbc3a46a9eeac3c726a37443d4201151cb60"
+    },
+    {
+      "path": "参赛材料/主报告/主报告_面向园区末端配送的低空风险仿真与起降场选址系统.pdf",
+      "bytes": 1136189,
+      "sha256": "d72945e024e30f0346524e7dc23a592db29c4b9017399a9291147c939f953b41",
+      "pages": 30
+    },
+    {
+      "path": "参赛材料/独立表单/作品信息表.docx",
+      "bytes": 1117952,
+      "sha256": "9ae235b07bcd75c6a2cf0907181915cd8fa23103eac23c87cbdf6032df368ba5"
+    },
+    {
+      "path": "参赛材料/独立表单/作品信息表.md",
+      "bytes": 2097,
+      "sha256": "ee375a7b899f28d12c924742df79bef8419878397f48815bd4929b945070e108"
+    },
+    {
+      "path": "参赛材料/独立表单/作品信息表.pdf",
+      "bytes": 143966,
+      "sha256": "2229bcfc3f2faeb143fb2a237187048c5932295a4cd8ea68b5bf3866a99fb900",
+      "pages": 2
+    },
+    {
+      "path": "参赛材料/独立表单/诚信承诺书.docx",
+      "bytes": 1116273,
+      "sha256": "d834368ec9bcb64aa64364e444ffd85c0109e7467ff66bf056a9dee821c4e913"
+    },
+    {
+      "path": "参赛材料/独立表单/诚信承诺书.md",
+      "bytes": 1412,
+      "sha256": "1e0c7725bbc8f6e37778e1740566560efd2ea1b0a7d10b41c95dd98db62efb42"
+    },
+    {
+      "path": "参赛材料/独立表单/诚信承诺书.pdf",
+      "bytes": 102593,
+      "sha256": "36278684d5023028fddab657ac7cf0e12a738eacc98baeb53a0e4508fdeba72e",
+      "pages": 1
+    },
+    {
+      "path": "参赛材料/答辩PPT/V0.7候选版阅读说明.md",
+      "bytes": 1169,
+      "sha256": "08d7bcc8310a7dd3ba8501b45b09067bd7bef8b9ddb4a3373eb33727b1d123c0"
+    },
+    {
+      "path": "参赛材料/答辩PPT/五分钟讲稿与问答.md",
+      "bytes": 7307,
+      "sha256": "561cb745e0e16a94941383c80fe22bc7ccfb69d8cb73758b16cf8f8c5c65336c"
+    },
+    {
+      "path": "参赛材料/答辩PPT/园区低空配送_答辩PPT_V0.7候选版.pdf",
+      "bytes": 1256265,
+      "sha256": "999c7e1e3c2d246d0c6c6ed4c1c093bef3d20fe1427a6cf05bc7e74ef4717890",
+      "pages": 11
+    },
+    {
+      "path": "参赛材料/答辩PPT/园区低空配送_答辩PPT_V0.7候选版.pptx",
+      "bytes": 487121,
+      "sha256": "6d365d1eb30b303b023f664e9bb0affdd7b4663a70bade3de0dfadcfe6b72745"
+    }
+  ],
+  "presentation": {
+    "slides": 11,
+    "native_tables": 2,
+    "speaker_note_seconds": [
+      15,
+      15,
+      40,
+      25,
+      35,
+      30,
+      35,
+      30,
+      20,
+      20,
+      20
+    ],
+    "script_seconds": 285,
+    "switching_margin_seconds": 15,
+    "native_powerpoint_tested": false,
+    "human_timed_rehearsal": "pending",
+    "final_pptx_roundtrip": [
+      {
+        "slide": 1,
+        "pixel_identical": true
+      },
+      {
+        "slide": 2,
+        "pixel_identical": true
+      },
+      {
+        "slide": 3,
+        "pixel_identical": true
+      },
+      {
+        "slide": 4,
+        "pixel_identical": true
+      },
+      {
+        "slide": 5,
+        "pixel_identical": true
+      },
+      {
+        "slide": 6,
+        "pixel_identical": true
+      },
+      {
+        "slide": 7,
+        "pixel_identical": true
+      },
+      {
+        "slide": 8,
+        "pixel_identical": true
+      },
+      {
+        "slide": 9,
+        "pixel_identical": true
+      },
+      {
+        "slide": 10,
+        "pixel_identical": true
+      },
+      {
+        "slide": 11,
+        "pixel_identical": true
+      }
+    ]
+  },
+  "visual_review": {
+    "report_pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "final_changed_report_pages_reinspected": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23
+    ],
+    "slides_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "pending": [
+    "个人及教师等信息",
+    "真实手写签字及主报告替换",
+    "真人计时排练",
+    "正式命名、永久网盘和报名提交"
+  ]
+}

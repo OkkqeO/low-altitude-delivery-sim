@@ -9,7 +9,6 @@ import statistics
 
 from engine import PLAN_NAMES, risk_at
 from map_geometry import svg_path
-from flight_map import flight_obstacles
 
 COLORS = {"fixed": "#8392a9", "distance": "#3869e8", "combined": "#079d8a"}
 SCENARIOS = {"normal": "正常配送", "peak": "高峰订单", "closure": "局部空域关闭"}
@@ -73,14 +72,17 @@ def map_svg(result: dict, plan_key="combined") -> str:
             continue
         path = svg_path(feature, scale) if feature.get("polygon") else f'M{feature["x"]*scale},{feature["y"]*scale} h{feature["w"]*scale} v{feature["h"]*scale} h{-feature["w"]*scale} Z'
         body.append(f'<path d="{path}" fill="#e6ebf1" fill-rule="evenodd" stroke="#adbaca" stroke-width=".7"/>')
-    for b in flight_obstacles(scene):
+    for b in scene["buildings"]:
         blocked = b["height"] + scene["vertical_clearance"] >= scene["altitude"]
+        body.append(f'<g class="building" data-building-id="{escape(b["id"], quote=True)}">')
+        body.append('<title>'+escape(f'{b["name"]} · {b["height"]:g}米 · '+('需绕行' if blocked else '可从上方通过'))+'</title>')
         if b.get("polygon"):
-            body.append(f'<path d="{svg_path(b, scale)}" fill="{"#c1cbd9" if blocked else "#e2e8ef"}" fill-opacity=".5" fill-rule="evenodd" stroke="#8392a9"/>')
+            body.append(f'<path d="{svg_path(b, scale)}" fill="{"#D5E0EE" if blocked else "#EDF2F7"}" fill-opacity=".5" fill-rule="evenodd" stroke="{"#597594" if blocked else "#A6B7C9"}"/>')
         else:
-            body.append(f'<rect x="{b["x"]*scale}" y="{b["y"]*scale}" width="{b["w"]*scale}" height="{b["h"]*scale}" rx="5" fill="{"#c1cbd9" if blocked else "#e2e8ef"}" stroke="#8392a9"/>')
+            body.append(f'<rect x="{b["x"]*scale}" y="{b["y"]*scale}" width="{b["w"]*scale}" height="{b["h"]*scale}" fill="{"#D5E0EE" if blocked else "#EDF2F7"}" stroke="{"#597594" if blocked else "#A6B7C9"}"/>')
         if not schematic:
             body.append(text((b["x"]+b["w"]/2)*scale, (b["y"]+b["h"]/2)*scale, f'{b["name"]} {b["height"]}m', 11, anchor="middle"))
+        body.append('</g>')
     if scene["closure"]:
         b = scene["closure"]
         body.append(f'<rect x="{b["x"]*scale}" y="{b["y"]*scale}" width="{b["w"]*scale}" height="{b["h"]*scale}" fill="#ffd5d5" fill-opacity=".7" stroke="#c34545" stroke-dasharray="7 4"/>')
@@ -99,7 +101,7 @@ def map_svg(result: dict, plan_key="combined") -> str:
         selected = p["id"] in plan["pad_ids"]
         body.append(f'<circle cx="{p["x"]*scale}" cy="{p["y"]*scale}" r="{9 if selected else 5}" fill="{COLORS[plan_key] if selected else "#ffffff"}" stroke="#3869e8" stroke-width="2"/>')
         body.append(text(p["x"]*scale+12, p["y"]*scale+5, p["id"], 12))
-    note = "仅显示飞行障碍与道路。" if schematic else "橙色深浅表示模拟人员暴露。"
+    note = "深色建筑需绕行，浅色可飞越；显示全部建筑与道路。" if schematic else "橙色深浅表示模拟人员暴露；深色建筑需绕行，浅色可飞越。"
     body += ['</g>', text(40, map_h+120, f'选中场站：{" + ".join(plan["pad_ids"])}；巡航高度：{scene["altitude"]}m；{note}'),
              text(40, map_h+146, f"人员暴露为代理指标；同高度间距检测阈值 {result['config'].get('separation',20)}m，完整冲突记录见conflicts.csv。", 12, "#687790")]
     return svg_document(round(map_w+80), round(map_h+165), body)

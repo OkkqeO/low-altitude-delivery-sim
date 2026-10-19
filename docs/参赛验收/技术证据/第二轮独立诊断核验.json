@@ -1,0 +1,190 @@
+{
+  "checked_at_beijing": "2026-10-19T00:21:42.595392+08:00",
+  "role": "独立评委中期技术复审；未修改生产实现",
+  "checks": [
+    {
+      "check": "protocol and core/rule/source hashes match; old/new sample roles disjoint",
+      "status": "passed",
+      "protocol_sha256": "785370a0da8e021195d61b99c5320aa7189b35600a941af89dfe3ecfbe5fae9f"
+    },
+    {
+      "check": "both actual studies independently recomputed means, differences, four-metric relations, exact/material objective layers and JSON/CSV equality",
+      "status": "passed",
+      "results": {
+        "default": [
+          {
+            "scenario": "normal",
+            "recommendation_status": "comparison_required",
+            "plans": [
+              {
+                "plan": "fixed",
+                "pareto_status": "dominated",
+                "dominated_by": [
+                  "combined"
+                ],
+                "service_status": "meets"
+              },
+              {
+                "plan": "distance",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "meets"
+              },
+              {
+                "plan": "combined",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "meets"
+              }
+            ]
+          },
+          {
+            "scenario": "peak",
+            "recommendation_status": "not_recommended",
+            "plans": [
+              {
+                "plan": "fixed",
+                "pareto_status": "dominated",
+                "dominated_by": [
+                  "combined"
+                ],
+                "service_status": "below"
+              },
+              {
+                "plan": "distance",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "below"
+              },
+              {
+                "plan": "combined",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "below"
+              }
+            ]
+          }
+        ],
+        "adverse": [
+          {
+            "scenario": "normal",
+            "recommendation_status": "comparison_required",
+            "plans": [
+              {
+                "plan": "fixed",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "meets"
+              },
+              {
+                "plan": "distance",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "meets"
+              },
+              {
+                "plan": "combined",
+                "pareto_status": "dominated",
+                "dominated_by": [
+                  "fixed",
+                  "distance"
+                ],
+                "service_status": "meets"
+              }
+            ]
+          },
+          {
+            "scenario": "peak",
+            "recommendation_status": "not_recommended",
+            "plans": [
+              {
+                "plan": "fixed",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "below"
+              },
+              {
+                "plan": "distance",
+                "pareto_status": "non_dominated",
+                "dominated_by": [],
+                "service_status": "below"
+              },
+              {
+                "plan": "combined",
+                "pareto_status": "dominated",
+                "dominated_by": [
+                  "fixed",
+                  "distance"
+                ],
+                "service_status": "below"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "check": "independently constructed equal vectors and equal objectives never strictly dominate or invent a decision layer",
+      "status": "passed"
+    },
+    {
+      "check": "15 independent missing/bool/NaN/infinite/negative constructions stay pending, without contaminating the other scenario",
+      "status": "passed"
+    },
+    {
+      "check": "all-failed orders preserve 100% failure and unknown successful-order metrics, without zero filling or recommending",
+      "status": "passed"
+    },
+    {
+      "check": "unequal run-size failures use equal run-weight ratios, not pooled orders",
+      "status": "passed"
+    },
+    {
+      "check": "independent nextafter floating tie preserves exact layer2 win and tolerance layer3 loss separately",
+      "status": "passed"
+    },
+    {
+      "check": "missing or duplicate expected seed prevents complete metric or service status",
+      "status": "passed"
+    },
+    {
+      "check": "reviewer standard-library 14 new tests and actual default/adverse Tk smoke",
+      "status": "passed",
+      "runtime": [
+        {
+          "command": [
+            "C:\\Users\\20115\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+            "-X",
+            "utf8",
+            "-S",
+            "-m",
+            "unittest",
+            "tests.test_decision_support",
+            "-v"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "test_all_below_service_target_gives_no_recommendation (tests.test_decision_support.DecisionSupportTests.test_all_below_service_target_gives_no_recommendation) ... ok\ntest_design_to_evaluation_reversal_is_observation_not_causal_claim (tests.test_decision_support.DecisionSupportTests.test_design_to_evaluation_reversal_is_observation_not_causal_claim) ... ok\ntest_diagnosis_and_exports_preserve_study (tests.test_decision_support.DecisionSupportTests.test_diagnosis_and_exports_preserve_study) ... ok\ntest_empty_study_is_pending_without_invented_zero_metrics (tests.test_decision_support.DecisionSupportTests.test_empty_study_is_pending_without_invented_zero_metrics) ... ok\ntest_equal_vectors_do_not_strictly_dominate_each_other (tests.test_decision_support.DecisionSupportTests.test_equal_vectors_do_not_strictly_dominate_each_other) ... ok\ntest_exact_float_decision_is_distinct_from_diagnostic_tolerance (tests.test_decision_support.DecisionSupportTests.test_exact_float_decision_is_distinct_from_diagnostic_tolerance) ... ok\ntest_failure_rate_is_mean_of_run_ratios_not_ratio_of_totals (tests.test_decision_support.DecisionSupportTests.test_failure_rate_is_mean_of_run_ratios_not_ratio_of_totals) ... ok\ntest_four_metric_pareto_dominance_is_reported (tests.test_decision_support.DecisionSupportTests.test_four_metric_pareto_dominance_is_reported) ... ok\ntest_invalid_targets_are_rejected (tests.test_decision_support.DecisionSupportTests.test_invalid_targets_are_rejected) ... ok\ntest_meeting_mean_target_does_not_automatically_choose_a_winner (tests.test_decision_support.DecisionSupportTests.test_meeting_mean_target_does_not_automatically_choose_a_winner) ... ok\ntest_missing_nan_infinite_or_boolean_metric_makes_pareto_pending (tests.test_decision_support.DecisionSupportTests.test_missing_nan_infinite_or_boolean_metric_makes_pareto_pending) ... ok\ntest_missing_or_duplicate_seed_does_not_appear_complete (tests.test_decision_support.DecisionSupportTests.test_missing_or_duplicate_seed_does_not_appear_complete) ... ok\ntest_missing_punctuality_makes_service_pending (tests.test_decision_support.DecisionSupportTests.test_missing_punctuality_makes_service_pending) ... ok\ntest_tradeoff_is_non_dominated_and_not_called_universally_best (tests.test_decision_support.DecisionSupportTests.test_tradeoff_is_non_dominated_and_not_called_universally_best) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.024s\n\nOK\n"
+        },
+        {
+          "command": [
+            "C:\\Users\\20115\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+            "-X",
+            "utf8",
+            "-S",
+            "cases/verify_decision_gui.py"
+          ],
+          "exit_code": 0,
+          "stdout": "Decision GUI passed: real normal/adverse studies, no default selection, completion polling, four-metric dominance/tradeoffs, below-target rejection, dominated replay, adjustable target without resimulation, invalid target blocking, JSON/CSV exports, unchanged raw study, 1000x680 controls.\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ],
+  "verified_source_sha256": {
+    "decision_support.py": "00cb625268234ad939cbe0071e6838b4a67e81302469ce9680e743d22ef24d68",
+    "site_ui.py": "fca7d440338c275339c6da76ec1ce38b9e59ef2a99e41837221be54072560488",
+    "cases/verify_decision_gui.py": "da7518aeee9c0cf6f8a4935f7da37ba79b7b2610c32665219d08f59f20824b6e"
+  },
+  "limits": "仅旧两份研究的诊断与构造/Tk/导出已复核；新240运行和258设计重放仍待成果完成后验收；不含本轮材料最终验收。"
+}

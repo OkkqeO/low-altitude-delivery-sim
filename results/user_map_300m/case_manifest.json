@@ -1,0 +1,42 @@
+{
+  "case": "user_map_300m",
+  "scale_source": "用户提供横向300米",
+  "height_source": "用户提供不超过30米；按上界建模",
+  "altitudes": [
+    30,
+    45
+  ],
+  "drone_counts": [
+    3,
+    5,
+    8
+  ],
+  "evaluation_seeds": [
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019
+  ],
+  "summary_rows": 36,
+  "plan_evaluations": 180,
+  "task_records_including_repeated_orders": 8100,
+  "compressed_study_sha256": {
+    "h30_d3.json.gz": "0b7da33463d3e68acdee94a7ff2f5c99e1fc1a16148d3dbd6599aa7f4d34b12a",
+    "h30_d5.json.gz": "4160c915e0069cb85ade34cfd2873ad64115d9ab08558f936895fb2626fe5446",
+    "h30_d8.json.gz": "2adbfb8f9dd6fe51ef4f1e9e5969582a5a1e9349aa2e36c376e3f483e078627d",
+    "h45_d3.json.gz": "ef315be1310edc8279b51f8af3b0ec871b4123ce8b2629b85ee474ae5cc12600",
+    "h45_d5.json.gz": "56d42c968403ddc1aaff6391a676b23edb7f89a94b5e12bdb864a88babdcbbca",
+    "h45_d8.json.gz": "21d778e9f3e1bd7bec63dd726dd2c92aa5694ba0bb8931a6e723b698f38fcecd"
+  },
+  "source_sha256": {
+    "cases\\user_map_300m\\original.jpg": "2a7f10e1a9e6e601753105b1591e18d1ff37326913800e2092e17f3839a2d3ae",
+    "cases\\user_map_300m\\annotations.json": "7c4e572d0b7f361f8e685f913f42dbb92a204961426fb254bee99d9a569f3ade",
+    "cases\\user_map_300m\\scene.json": "5f9cef7c5f9e34af1ddde45bc7c576a4dc86f0337127b93b3b8f4d0b67e9c4de",
+    "cases\\run_user_map_case.py": "66181a6dedd73d997337d12244a7381a4e029d616958abbc8aa6536dc375a086",
+    "cases\\plot_user_map_case.py": "a824fc0efc52bdbbd195d2ef19e58ebf55b98d26dc74062bedc63df28ee8ac16",
+    "engine.py": "565121e6878cff34ca95f261aa3112b7a504229e35613299a43414ae30ab0ca6",
+    "site_selection.py": "95cfdf81b4bcebbdee6428d3d36128bdab9605821904f212cc55a0a34dd8055a",
+    "airspace.py": "984cd43a18ac090e37b8c8a897bc6b47d1907f000b109034f964ce1c20ef3609"
+  }
+}
